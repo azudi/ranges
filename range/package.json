@@ -1,0 +1,18 @@
+{
+  "name": "ranges",
+  "version": "1.0.0",
+  "description": "package for progress bar and rollers",
+  "main": "module/ranges.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ranges",
+    "roller",
+    "range",
+    "progesss-bar",
+    "stopwatch"
+  ],
+  "author": "jerry aubuike",
+  "license": "ISC"
+}

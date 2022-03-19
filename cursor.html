@@ -1,0 +1,1229 @@
+
+<style type="text/css">
+  
+</style>
+
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="Font-face/font-face.css">
+   <!-- <link rel="stylesheet" type="text/css" href="range/range.css"> -->
+   <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+   
+
+   <style type="text/css">
+     body{
+       margin: 0;
+       padding: 0;
+      
+     }
+     @media (min-width:992px){
+     section{
+       overflow-x: hidden;
+     }
+    }
+       .code-head{
+         font-weight: 700;
+         color: rgb(192, 184, 184);
+       }
+       .top-code{
+         color: rgb(191, 194, 27);
+       }
+       pre{
+         background: rgb(6, 6, 56);
+         color: wheat;
+         padding-left: 0;
+         padding-right: 2em;
+         width: 100%;
+         height: 400px;
+         overflow: scroll;
+       }
+       pre::-webkit-scrollbar{
+    width: 5px !important;opacity: 0.5 !important;
+    }
+    pre::-webkit-scrollbar-thumb{
+        background: rgba(226, 226, 230, 0.4)!important;border-radius: 10px !important;
+        height: 0.8em;width: 0 !important;
+    }
+    pre::-webkit-scrollbar-thumb:hover{
+      background: rgb(201, 201, 209)
+    }  
+       .flex{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+       }
+       .centered-content{
+         box-shadow:  2px 5px 5px rgba(0,0,0,0.1);
+         margin-bottom: 2em;
+         border-radius: 5px;
+        }
+       .range-container{
+         display: flex;justify-content: center;
+         align-items: center;
+       }
+       .heading{
+         font-size: 2em;
+        font-weight: 300;
+        padding: 0.5em 0;
+        margin-bottom: 0.5em;
+        box-shadow: 2px 5px 5px rgba(0,0,0,0.1);
+       }
+       .text-gray{
+         color: rgba(179, 164, 164, 0.692);
+       }
+       .centered-content>div:nth-of-type(2){
+         padding: 2em 0;
+       }
+   </style>
+ <section >
+   <div  class="flex col-md-12">
+   <h1 class="flex centered-content col-md-10 col-lg-8 col-sm-11 heading">
+      Types of custom ranges
+   </h1>
+  </div>
+
+   <div class="flex col-md-12">
+
+    <!-- begin of first range container -->
+       <div class="flex centered-content col-md-10 col-lg-8 col-sm-11">
+
+        <!-- code for the display of working codes -->
+         <div class="col-md-6">
+           <pre>
+            <code >
+              <!-- begin of code header -->
+              <em class="code-head"> // HTML code</em>
+           <em class="top-code"> &lt;div id="circle-div"&gt; 
+            &lt;svg&gt; 
+            &lt;circle/&gt; 
+            &lt;/svg&gt; 
+                &lt;/div&gt;
+              </em>
+ <!-- end of code header -->
+               <em class="code-head"> // javascript code</em> 
+                <em>   let circle=new range.circle({
+                  id:"circle-div",
+                  width:200,
+                  strokewidth:15,
+                  percent:70,
+                  rounded:false,
+                  fontsize:33,
+                  color:"red",
+                  textcolor:"red",
+                  textbold:100,
+                  track:true,
+                  indicator:true,
+                  animate:false,
+                  trackcolor:"",
+              <em class="text-gray">  // trackfit:true,</em>
+              <em class="text-gray">  //dashed:true,</em>
+                  unit:"%",
+              <em class="text-gray">    //fillbackground:"transparent"</em>
+                  })
+                </em>
+            </code>
+          </pre>
+         </div>
+         
+        <!-- end for the display of working codes -->
+
+   <!-- code below is for the range output -->
+         <div class="col-md-5 range-container">
+        <div id="click-div"> 
+        <svg>
+           <circle/>
+        </svg>
+      </div>  
+       </div>
+   <!--end of code for the range output -->
+
+       </div>
+           <!-- begin of first range container -->
+   </div>
+
+   <div class="flex col-md-12">
+     
+            <!-- begin of range container -->
+            <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+              <!-- code for the display of working codes -->
+               <div class="col-md-6" >
+                 <pre>
+                  <code >
+                    <!-- begin of code header -->
+                    <em class="code-head"> // HTML code</em>
+                 <em class="top-code"> &lt;div id="circle2-div"&gt; 
+                  &lt;svg&gt; 
+                  &lt;circle/&gt; 
+                  &lt;/svg&gt; 
+                      &lt;/div&gt;
+                    </em>
+       <!-- end of code header -->
+                     <em class="code-head"> // javascript code</em> 
+                      <em>   let circle2=new range.circle({
+                        id:"circle-div",
+                        width:200,
+                        strokewidth:15,
+                        percent:65,
+                        rounded:false,
+                        fontsize:33,
+                        color:"red",
+                        textcolor:"red",
+                        textbold:100,
+                        track:true,
+                        indicator:true,
+                        animate:false,
+                        trackcolor:",
+                        unit:"%",
+                        })
+                      </em>
+                      /*
+                      <em class="text-gray">  these code below is not useful except want to 
+                         activate onclick function for stopwatch or timer ( customize clickeffect function )</em>
+                      */
+                      
+                      <em class="text-gray">    let count=0;
+                        let condition=true;
+                         document.querySelector("#circle2-div").addEventListener("click",function(){
+                       
+                          let interval=setInterval(() => {
+                            if(!condition){
+                              let people2=new range.circle({
+                                  id:"click2-div",
+                                  width:180,
+                                  strokewidth:15,
+                                  percent:count++,
+                                  rounded:false,
+                                  fontsize:33,
+                                  color:"red",
+                                  textcolor:"red",
+                                  textbold:100,
+                                  track:true,
+                                  indicator:true,
+                                  animate:false,
+                                  trackcolor:"",
+                                  trackfit:true,
+                                  //dashed:true,
+                                  unit:"%",
+                                  //fillbackground:"transparent"
+                                  })
+                          }
+                          else{
+                                  clearInterval(interval)
+                                }
+                      
+                             }, 500);
+                       
+                           
+                             condition=!condition;
+                         })
+                        </em>
+                  </code>
+                </pre>
+               </div>
+               
+              <!-- end for the display of working codes -->
+      
+         <!-- code below is for the range output -->
+               <div class="col-md-5 range-container">
+              <div id="click2-div"> 
+              <svg>
+                 <circle/>
+              </svg>
+            </div> 
+             </div>
+         <!--end of code for the range output -->
+             </div>
+                 <!--end of range container -->
+   </div>
+
+
+
+
+   
+   <div class="flex col-md-12">
+     
+    <!-- begin of range container -->
+    <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+      <!-- code for the display of working codes -->
+       <div class="col-md-6" >
+         <pre>
+          <code >
+            <!-- begin of code header -->
+            <em class="code-head"> // HTML code</em>
+         <em class="top-code"> &lt;div id="circle3-div"&gt; 
+          &lt;svg&gt; 
+          &lt;circle/&gt; 
+          &lt;/svg&gt; 
+              &lt;/div&gt;
+            </em>
+<!-- end of code header -->
+             <em class="code-head"> // javascript code</em> 
+              <em> let people3=new range.circle({
+                id:"circle3-div",
+                width:180,
+                strokewidth:15,
+                percent:40,
+                rounded:false,
+                fontsize:33,
+                color:"red",
+                textcolor:"red",
+                textbold:100,
+                track:true,
+                indicator:true,
+                animate:false,
+                trackcolor:"",
+                trackfit:true,
+                dashed:true,
+                unit:"%",
+                breakcolor:"white",
+                })
+              </em>
+          </code>
+        </pre>
+       </div>
+       
+      <!-- end for the display of working codes -->
+
+ <!-- code below is for the range output -->
+       <div class="col-md-5 range-container">
+      <div id="click3-div"> 
+      <svg>
+         <circle/>
+      </svg>
+    </div> 
+     </div>
+ <!--end of code for the range output -->
+     </div>
+         <!--end of range container -->
+</div>
+
+
+
+
+   
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="circle4-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em> 
+            <em>   let circle4=new range.circle({
+              id:"circle4-div",
+              width:180,
+              strokewidth:15,
+              percent:40,
+              rounded:true,
+              fontsize:33,
+              color:"white",
+              textcolor:"white",
+              textbold:100,
+              track:true,
+              indicator:true,
+              animate:false,
+              trackcolor:"",
+              unit:"%",
+              counter:true,
+              maxcounter:120,
+              countertime:500,
+              clickeffect:true,
+              fillbackground:"red"
+              })
+            </em>
+            /*
+            <em class="text-gray">
+              to disable the timer effect onclick set  (clickeffect:false);
+              note custom timer can also be made.
+            </em>
+            */
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+    <div id="click4-div"> 
+    <svg>
+       <circle/>
+    </svg>
+  </div> 
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="rect-div"&gt; 
+        &lt;svg&gt; 
+        &lt;rect/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em> 
+            <em>   let rectangle=new range.rectangle({
+              id:"rect-div",
+              width:150,
+              strokewidth:20,
+              color:"red",
+              track:true,
+              trackcolor:"",
+              percent:45,
+              rounded:true,
+              indicator:true,
+              textcolor:"black",
+              textbold:100,
+              fontsize:30,
+              unit:"px",
+              dashed:true,
+              breakcolor:"white"
+              })
+
+              /*
+              <em class="text-gray">
+                 note that the option can be  edited
+              </em>
+              */
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="rect-div"> 
+        <svg>
+        <rect/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" style="display: inline-block;">
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="line-div"&gt;  
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em> 
+            <em>      
+              let line=new range.line({
+                id:"line-div",
+                width:"100%",
+                strokewidth:20,
+                percent:47,
+                color:"red",
+                indicator:true,
+                trackcolor:"",
+                animate:false,
+                textcolor:"white",
+                roundrange:"5px 40px 5px 20px"
+                })
+
+              <em class="text-gray">
+                
+              /*
+                note setting (animate:true) will disable the indicator
+              */
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container" style="padding: 3em 1em;display: inline-block;vertical-align: middle;height: 100%;">
+          <div id="line-div">
+        </div>
+       
+      </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="svg-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em> 
+            <em>    let you=new range.roller({
+              id:"svg-div",
+              width:100,
+              strokewidth:5,
+              rounded:false,
+              color:"orange",
+              animate:false,
+              track:false,
+              trackcolor:"",
+              percent:60,
+              ratio:2
+              })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container" >
+      <div id="svg-div"> 
+        <svg>
+        <circle/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="square-div"&gt; 
+        &lt;svg&gt; 
+        &lt;rect/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em> 
+            <em>   new range.rectangleroller({
+              id:"square-div",
+               width:100,
+               strokewidth:20,
+               color:"orange",
+               track:true,
+               trackcolor:"",
+               rounded:false,
+            })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="square-div"> 
+        <svg>
+        <rect/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="circle5-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em> 
+            <em>   let circle5=new range.circle({
+              id:"circle5-div",
+              width:180,
+              strokewidth:15,
+              percent:30,
+              rounded:false,
+              fontsize:33,
+              color:"red",
+              textcolor:"red",
+              textbold:100,
+              track:true,
+              indicator:true,
+              animate:false,
+              trackcolor:"",
+              widetrack:true,
+              trackfit:true,
+              dashed:true,
+              unit:"%",
+              breakcolor:"white"
+              })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="circle5-div"> 
+        <svg>
+        <circle/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="circle6-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em> 
+            <em>   let circle6=new range.circle({
+              id:"circle5-div",
+              width:180,
+              strokewidth:15,
+              percent:30,
+              rounded:false,
+              fontsize:33,
+              color:"red",
+              textcolor:"red",
+              textbold:100,
+              track:true,
+              indicator:true,
+              animate:false,
+              trackcolor:"",
+              widetrack:true,
+              trackfit:true,
+              dashed:true,
+              unit:"%",
+              breakcolor:"white"
+              })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="circle6-div"> 
+        <svg>
+        <circle/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="circle7-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em> 
+            <em>    
+              let circle7=new range.circle({
+                id:"circle7-div",
+                width:180,
+                strokewidth:15,
+                percent:43,
+                rounded:false,
+                fontsize:33,
+                color:"red",
+                textcolor:"red",
+                textbold:100,
+                track:true,
+                indicator:true,
+                animate:false,
+                trackcolor:"",
+                widetrack:true,
+                trackfit:true,
+                unit:"%",
+                arrowtip:true,
+                breakcolor:"white"
+                })
+            </em>
+            <em class="text-gray">
+              /*
+
+              //these progress barr cannot be use fro animation or stopwatch only static progress range 
+              //code below for click stopwatch 
+              let start=true;
+              let point=0
+              
+             document.querySelector("#circle7-div").addEventListener("click",function(){
+           
+              let revolve=setInterval(() => {
+                if(!start){
+                  let people7=new range.circle({
+                    id:"circle7-div",
+                    width:180,
+                    strokewidth:15,
+                    percent:point++,
+                    rounded:false,
+                    fontsize:33,
+                    color:"red",
+                    textcolor:"red",
+                    textbold:100,
+                    track:true,
+                    indicator:true,
+                    animate:false,
+                    trackcolor:"",
+                    widetrack:true,
+                    trackfit:true,
+                    unit:"%",
+                    arrowtip:true,
+                    breakcolor:"white"
+                      })
+              }
+              else{
+                      clearInterval(revolve)
+                    }
+          
+                 }, 500);
+           
+               
+                 start=!start;
+             })
+              */
+
+            </em>
+        </code>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="circle7-div"> 
+        <svg>
+        <circle/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="circle8-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em>
+
+            <em>   let circle8=new range.circle({
+                    id:"circle8-div",
+                      width:180,
+                      strokewidth:15,
+                      percent:38,
+                      rounded:false,
+                      fontsize:33,
+                      color:"red",
+                      textcolor:"red",
+                      textbold:100,
+                      track:true,
+                      indicator:true,
+                      animate:false,
+                      trackcolor:"",
+                      widetrack:true,
+                      trackfit:true,
+                      unit:"%",
+                      arrowtip:true,
+                      balltip:true,
+                      breakcolor:"white"
+              })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="circle8-div"> 
+        <svg>
+        <circle/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+ </section>
+
+ 
+   <script src="range/ranges.js"></script>
+   <script type="text/javascript">
+ 
+
+    let line=new range.line({
+   id:"line-div",
+   width:"100%",
+   strokewidth:20,
+   percent:47,
+   color:"red",
+   indicator:true,
+   trackcolor:"",
+   animate:false,
+   textcolor:"white",
+   roundrange:"5px 0px 10px  20px"
+   })
+
+   
+   
+   
+   
+  let people=new range.circle({
+  id:"click-div",
+  width:150,
+  strokewidth:15,
+  percent:70,
+  rounded:false,
+  fontsize:33,
+  color:"red",
+  textcolor:"red",
+  textbold:100,
+  track:true, 
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  unit:"%",
+  })
+
+  
+  let count=0;
+  let condition=true;
+   document.querySelector("#rect-div").addEventListener("click",function(){
+ 
+    let interval=setInterval(() => {
+      if(!condition){
+        let rect=new range.rectangle({
+     id:"rect-div",
+     width:150,
+     strokewidth:20,
+     color:"red",
+     track:true,
+     trackcolor:"",
+     percent:count++,
+     rounded:false,
+     indicator:true,
+     textcolor:"black",
+     textbold:100,
+     fontsize:30,
+     unit:"px",
+     dashed:true,
+     breakcolor:"white"
+  })
+    }
+    else{
+            clearInterval(interval)
+          }
+
+       }, 500);
+ 
+     
+       condition=!condition;
+   })
+  
+  let people2=new range.circle({
+  id:"click2-div",
+  width:180,
+  strokewidth:15,
+  percent:65,
+  rounded:false,
+  fontsize:33,
+  color:"red",
+  textcolor:"red",
+  textbold:100,
+  track:true,
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  trackfit:true,
+  unit:"%",
+  })
+
+
+
+
+  let people3=new range.circle({
+  id:"click3-div",
+  width:180,
+  strokewidth:15,
+  percent:40,
+  rounded:false,
+  fontsize:33,
+  color:"red",
+  textcolor:"red",
+  textbold:100,
+  track:true,
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  dashed:true,
+  trackfit:true,
+  unit:"%",
+  breakcolor:"white",
+  //fillbackground:"transparent"
+  })
+
+
+  
+  let people8=new range.circle({
+  id:"circle8-div",
+          width:180,
+          strokewidth:15,
+          percent:38,
+          rounded:false,
+          fontsize:33,
+          color:"red",
+          textcolor:"red",
+          textbold:100,
+          track:true,
+          indicator:true,
+          animate:false,
+          trackcolor:"",
+          widetrack:true,
+          trackfit:true,
+          unit:"%",
+          arrowtip:true,
+          balltip:true,
+          breakcolor:"white"
+  })
+
+
+
+  let people5=new range.circle({
+  id:"circle5-div",
+  width:180,
+  strokewidth:15,
+  percent:30,
+  rounded:false,
+  fontsize:33,
+  color:"red",
+  textcolor:"red",
+  textbold:100,
+  track:true,
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  widetrack:true,
+  trackfit:true,
+  dashed:true,
+  unit:"%",
+
+  breakcolor:"white"
+  //fillbackground:"transparent"
+  })
+
+
+  
+  
+  let people6=new range.circle({
+  id:"circle6-div",
+  width:180,
+  strokewidth:15,
+  percent:80,
+  rounded:false,
+  fontsize:33,
+  color:"red",
+  textcolor:"red",
+  textbold:100,
+  track:true,
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  widetrack:false,
+  trackfit:true,
+  dashed:true,
+  unit:"%",
+   balltip:true,
+  breakcolor:"white"
+  //fillbackground:"transparent"
+  })
+
+
+    let start=true;
+    let point=0
+    
+   document.querySelector("#circle8-div").addEventListener("click",function(){
+ 
+    let revolve=setInterval(() => {
+      if(!start){
+        
+  let people7=new range.circle({
+  id:"circle8-div",
+          width:180,
+          strokewidth:15,
+          percent:point++,
+          rounded:false,
+          fontsize:33,
+          color:"red",
+          textcolor:"red",
+          textbold:100,
+          track:true,
+          indicator:true,
+          animate:false,
+          trackcolor:"",
+          widetrack:true,
+          trackfit:true,
+          unit:"%",
+          arrowtip:true,
+          balltip:true,
+          breakcolor:"white"
+  })
+    }
+    else{
+            clearInterval(revolve)
+          }
+
+       }, 500);
+ 
+     
+       start=!start;
+   })
+
+
+  
+  let circle7=new range.circle({
+  id:"circle7-div",
+  width:180,
+  strokewidth:15,
+  percent:43,
+  rounded:false,
+  fontsize:33,
+  color:"red",
+  textcolor:"red",
+  textbold:100,
+  track:true,
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  widetrack:true,
+  trackfit:true,
+  unit:"%",
+  arrowtip:true,
+  breakcolor:"white"
+  })
+
+
+  let people4=new range.circle({
+  id:"click4-div",
+  width:180,
+  strokewidth:15,
+  percent:40,
+  rounded:true,
+  fontsize:33,
+  color:"white",
+  textcolor:"white",
+  textbold:100,
+  track:true,
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  unit:"%",
+  fillbackground:"red"
+  })
+  
+ 
+  let you=new range.roller({
+  id:"svg-div",
+  width:100,
+  strokewidth:5,
+  rounded:false,
+  color:"red",
+  animate:false,
+  track:false,
+  trackcolor:"",
+  percent:60,
+  ratio:2
+  })
+  
+  new range.rectangleroller({
+    id:"square-div",
+     width:100,
+     strokewidth:20,
+     color:"red",
+     track:true,
+     trackcolor:"",
+     rounded:false,
+  })
+  
+
+    
+   let rect=new range.rectangle({
+     id:"rect-div",
+     width:150,
+     strokewidth:20,
+     color:"red",
+     track:true,
+     trackcolor:"",
+     percent:45,
+     rounded:true,
+     indicator:true,
+     textcolor:"black",
+     textbold:100,
+     fontsize:30,
+     unit:"px",
+     dashed:true,
+     breakcolor:"white"
+  })
+
+ let timer=new range.circle({
+  id:"timer-div",
+  width:120,
+  strokewidth:5,
+  color:"white",
+  track:false,
+  trackcolor:"",
+  percent:70,
+  rounded:false,
+  indicator:true,
+  textcolor:"white",
+  textbold:100,
+  fontsize:20,
+  dashed:true,
+  unit:"%",
+  fillbackground:"green"
+  })
+   
+
+ 
+   </script>
