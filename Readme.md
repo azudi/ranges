@@ -77,8 +77,7 @@ let people=new range.circle({
 ### Install
 You can copy and include any of the following file:
 
-* [dist/vanilla-tilt.js](https://github.com/azudi/ranges/blob/main/range/ranges.js) ~ 2kb
-* [dist/vanilla-tilt.min.js](https://github.com/azudi/ranges/blob/main/range/range.css) ~ 1kb
+* [ranges.css](https://github.com/azudi/ranges/blob/main/range/range.css) ~ 1kb
 
 #### NPM
 
