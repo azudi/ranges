@@ -2,9 +2,9 @@
 
 [![npm version](https://badge.fury.io/js/vanilla-tilt.svg)](https://badge.fury.io/js/vanilla-tilt)
 
-A smooth progress bar javascript library forked from [ranges.js)](https://github.com/gijsroge/tilt.js).
+A smooth progress bar javascript library forked from [ranges.js)](https://github.com/azudi/ranges/tree/main/range).
 
-[View landing page (demos)](https://azudi.github.io/vanilla-tilt.js/)
+[View landing page (demos)](https://azudi.github.io/ranges/)
 
 ### Usage
 
@@ -75,10 +75,8 @@ let people=new range.circle({
 ### Install
 You can copy and include any of the following file:
 
-* [dist/vanilla-tilt.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.js) ~ 15kb
-* [dist/vanilla-tilt.min.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.min.js) ~ 8.5kb
-* [dist/vanilla-tilt.babel.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.babel.js) ~ 16.5kb
-* [dist/vanilla-tilt.babel.min.js](https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.babel.min.js) ~ 9.5kb
+* [dist/vanilla-tilt.js](https://github.com/azudi/ranges/blob/main/range/ranges.js) ~ 2kb
+* [dist/vanilla-tilt.min.js](https://github.com/azudi/ranges/blob/main/range/range.css) ~ 1kb
 
 #### NPM
 
@@ -97,7 +95,7 @@ import VanillaTilt from 'vanilla-tilt';
 
 ### Credits
 
-Original library: [ranges.js](http://gijsroge.github.io/tilt.js/)
+Original library: [ranges.js](https://github.com/azudi/ranges/tree/main/range)
 
 Original library author: [jerry azubuike](https://twitter.com/GijsRoge)
 
