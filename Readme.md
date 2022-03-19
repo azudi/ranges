@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/vanilla-tilt.svg)](https://badge.fury.io/js/vanilla-tilt)
 
-A smooth progress bar javascript library forked from [ranges.js)](https://github.com/azudi/ranges/tree/main/range).
+A smooth progress bar javascript library forked from [(ranges.js)](https://github.com/azudi/ranges/tree/main/range).
 
 [View landing page (demos)](https://azudi.github.io/ranges/)
 
@@ -15,7 +15,24 @@ A smooth progress bar javascript library forked from [ranges.js)](https://github
  <div id="circle-div"><svg><circle/></svg>
  </div>
 
-
+<script>
+let people=new range.circle({
+  id:"circle-div",
+  width:150,
+  strokewidth:15,
+  percent:70,
+  rounded:false,
+  fontsize:33,
+  color:"red",
+  textcolor:"red",
+  textbold:100,
+  track:true,
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  unit:"%",
+  })
+  </script>
 </body>
 ```
 
@@ -54,22 +71,7 @@ A smooth progress bar javascript library forked from [ranges.js)](https://github
 
 ### Methods
 ```js
-let people=new range.circle({
-  id:"circle-div",
-  width:150,
-  strokewidth:15,
-  percent:70,
-  rounded:false,
-  fontsize:33,
-  color:"red",
-  textcolor:"red",
-  textbold:100,
-  track:true,
-  indicator:true,
-  animate:false,
-  trackcolor:"",
-  unit:"%",
-  })
+
 ```
 
 ### Install
