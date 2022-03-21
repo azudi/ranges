@@ -1,10 +1,20 @@
 # ranges.js
+===========
 
 [![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.2&x2=0)](https://badge.fury.io/js/vanilla-tilt)
+
+
+It is a light weight library, which provides well customizable svg progress-range. The library does **not require any rendering from the server**, as the whole svg is created on the **client's browser**. However, as it is heavily dependent on the browser.
 
 A smooth progress bar javascript library forked from [(ranges.js)](https://github.com/azudi/ranges/tree/main/range).
 
 [View landing page (demos)](https://azudi.github.io/ranges/)
+
+
+### Contributing ###
+
+If you wish to contribute to the project, please send the pull requests to the develop branch. Before submitting any changes, try and test that the changes work with all the support browsers. If some CSS property isn't supported or is incomplete, please create appropriate tests for it as well before submitting any code changes.
+
 
 ### Building ###
 
