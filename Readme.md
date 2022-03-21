@@ -82,11 +82,14 @@ let people=new range.circle({
 Include these CDNs
 
 --Javascript
+```
 <script type="text/javascript" src="https://azudi.github.io/ranges/range/range.js"></script>
+```
 
 --CSS
+```
 <script type="text/javascript" src="https://azudi.github.io/ranges/range/range.css"></script>
-
+```
 You can copy and include any of the following file for liner animation:
 
 * [ranges.css](https://github.com/azudi/ranges/blob/main/range/range.css) ~ 1kb
