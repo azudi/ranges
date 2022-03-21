@@ -320,8 +320,8 @@
           </em>
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em> 
-            <em>   let circle4=new range.circle({
-              id:"circle4-div",
+            <em>    let people4=new range.circle({
+              id:"click4-div",
               width:180,
               strokewidth:15,
               percent:40,
@@ -335,10 +335,7 @@
               animate:false,
               trackcolor:"",
               unit:"%",
-              counter:true,
-              maxcounter:120,
-              countertime:500,
-              clickeffect:true,
+              boxshadow:true,
               fillbackground:"red"
               })
             </em>
@@ -1147,18 +1144,26 @@
   id:"click4-div",
   width:180,
   strokewidth:15,
-  percent:40,
-  rounded:true,
-  fontsize:33,
-  color:"white",
-  textcolor:"white",
+  percent:72,
+  rounded:false,
+  fontsize:27,
+  color:"rgb(255, 115, 0)",
+  textcolor:"rgba(255,255,255,0.7)",
   textbold:100,
   track:true,
   indicator:true,
   animate:false,
   trackcolor:"",
   unit:"%",
-  fillbackground:"red"
+  boxshadow:true,
+  widestroke:true,
+  fillbackground:"red",
+  arrowtip:true,
+  gradient:{
+        type:"radial-gradient",
+        colors:["orange 0%","rgb(255, 115, 0)  50%"],
+        orientation:{x:100,y:100,fill:100}
+  },
   })
   
  

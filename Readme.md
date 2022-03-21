@@ -6,6 +6,12 @@ A smooth progress bar javascript library forked from [(ranges.js)](https://githu
 
 [View landing page (demos)](https://azudi.github.io/ranges/)
 
+### Building ###
+
+Clone git repository:
+
+   $ git clone git://github.com/azudi/ranges.git
+
 ### Usage
 
 ```html
@@ -56,41 +62,36 @@ let people=new range.circle({
     animate:                   true,       // to animate the liner progress bar (can only functio if the ranges.css is loaded)   (true/false)
     widetrack:                 true,       // these is set to the track to be wider than the progress bar  (true/false)
     dashed:                    true,       // these is to set track in dashed track  (true/false)
-    unit:                "%",              // the unit to be displayed in the indicator  (string)
+    unit:                       "%",       // the unit to be displayed in the indicator  (string)
     balltip:                   true,       // set the end tip of the stroke to be round  (true/false)
     arrowtip:                  true,       // set the end of the stroke to be an arrow  (true/false)
+    boxshadow:                 true,       // set the inset box shadow of the track  (true/false)
     fillbackground:       "red",           // these is set to the background color of the progress bar  (--string)
+    gradient:                  object,     // set the background gradient of the stroke ---------       PROPERTIES--                                                                                      type=(the type of gradient)   (--strings)                                                            colors=(the gradient colors and percentages) (--strings)                                            orientation=(x:orientation along the x-axis, y:orientation along the y-axis, fill:capacity occupied by the gradient)  (--number)
     breakcolor:  "rgb(245,245,245)",       // To set the dashed track breaks color -- (these color should be the same with the background color || if background is transparent set to the background of the parent element)   (--string) 
     ratio:                        2,       // To set the number of divided tracks (only available in roller function)   (--number)
   
 }
 ```
 
-### Events
-
-
-### Methods
-```js
-
-```
 
 ### Install
-You can copy and include any of the following file:
+You can copy and include any of the following file for liner animation:
 
 * [ranges.css](https://github.com/azudi/ranges/blob/main/range/range.css) ~ 1kb
 
 #### NPM
 
-Also available on npm https://www.npmjs.com/package/vanilla-tilt
+Also available on npm https://www.npmjs.com/package/ranges
 
 ```
-npm install vanilla-tilt
+npm install range
 ```
 
 Import it using
 
 ```
-import VanillaTilt from 'vanilla-tilt';
+import range from 'range';
 ```
 
 
