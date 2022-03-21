@@ -1,6 +1,6 @@
 # ranges.js
 
-[![npm version](https://badge.fury.io/js/vanilla-tilt.svg)](https://badge.fury.io/js/vanilla-tilt)
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.2&x2=0)](https://badge.fury.io/js/vanilla-tilt)
 
 A smooth progress bar javascript library forked from [(ranges.js)](https://github.com/azudi/ranges/tree/main/range).
 
@@ -102,7 +102,8 @@ import range from 'range';
 
 Original library: [ranges.js](https://github.com/azudi/ranges/tree/main/range)
 
-Original library author: [jerry azubuike](https://twitter.com/GijsRoge)
+Original library author: [jerry azubuike](https://twitter.com/@JerryAzubuike5)
+Original library author linkedin: [jerry azubuike](https://www.linkedin.com/in/jerry-azubuike-801752222)
 
 
 ### License
