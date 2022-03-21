@@ -72,12 +72,39 @@
        .centered-content>div:nth-of-type(2){
          padding: 2em 0;
        }
+       .property{
+         list-style:circle;display: block;font-weight: 300;
+         font-size: 20px;font-family: arial;
+       }
+    
+       .tool{
+    margin: 2em 0;font-size: 16px;font-weight: 400;
+  
+       }
+       .show-script{
+         display: block !important;width: 100%;margin-top: 1em;
+         font-style: italic;font-weight: 500;text-align: center;
+         padding: 1em 0 ;background-color: rgba(0,0,0,0.1);
+       }
    </style>
  <section >
    <div  class="flex col-md-12">
    <h1 class="flex centered-content col-md-10 col-lg-8 col-sm-11 heading">
       Types of custom ranges
    </h1>
+   <div class="flex col-md-8 property">
+     <li>easy usage</li>
+     <li>light-weight</li>
+     <li>no dependency</li>
+     <li>rangejs</li>
+   </div>
+          <div class="flex col-md-8 tool">
+            download the javascript file from github or include the cdns below (javascript and css)
+            <span class="show-script">
+              &lt;script type="text/javascript" src="https://azudi.github.io/ranges/range/range.js" &gt; &lt;/script&gt;<br>
+              &lt;script type="text/javascript" src="https://azudi.github.io/ranges/range/range.css"> &lt;/script&gt;
+            </span>
+          </div>
   </div>
 
    <div class="flex col-md-12">
@@ -884,7 +911,7 @@
 
  </section>
 
- <script type="text/javascript" src="https://azudi.github.io/ranges/range/ranges.js"></script>
+ <script type="text/javascript" src="https://azudi.github.io/ranges/range/range.js"></script>
    <!-- <script src="range/ranges.js"></script> -->
    <script type="text/javascript">
  
