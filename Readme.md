@@ -79,7 +79,9 @@ let people=new range.circle({
 
 
 ### Install
-Include these CDNs
+
+
+ ### CDNs
 
 --Javascript
 ```
@@ -92,7 +94,6 @@ Include these CDNs
 ```
 You can copy and include any of the following file for liner animation:
 
-* [ranges.css](https://github.com/azudi/ranges/blob/main/range/range.css) ~ 1kb
 
 #### NPM
 
