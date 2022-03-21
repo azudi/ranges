@@ -78,10 +78,10 @@ let people=new range.circle({
     boxshadow:                 true,       // set the inset box shadow of the track  (true/false)
     fillbackground:           "red",           // these is set to the background color of the progress bar  (--string)
     gradient:                  object,     // set the background gradient of the stroke   
-    type:           "linear gradient",     //To set the type of gradient --property of gradient-- (--string)
+    type:           "linear gradient",     // To set the type of gradient --property of gradient-- (--string)
     colors:                    object,     // To set the gradient color --property of gradient-- (["red 0%","orange 30%","teal 100%"])
-    orientation:               object,    //To set the gradient orientation --property of gradient-- (x:orientation along the x-axis, y:orientation along the y-axis, fill:capacity occupied by the gradient)  
-    breakcolor:  "rgb(245,245,245)",       // To set the dashed track breaks color -- (these color should be the same with the background color || if background is transparent set to the background of the parent element)   (--string) 
+    orientation:               object,     // To set the gradient orientation --property of gradient-- (x:orientation along the x-axis, y:orientation along the y-axis,                                               fill:capacity occupied by the gradient)  
+    breakcolor:  "rgb(245,245,245)",       // To set the dashed track breaks color -- (these color should be the same with the background color || if background is                                                    transparent set to the background of the parent element)   (--string) 
     ratio:                        2,       // To set the number of divided tracks (only available in roller function)   (--number)
   
 }
