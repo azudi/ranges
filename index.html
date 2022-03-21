@@ -85,6 +85,7 @@
          display: block !important;width: 100%;margin-top: 1em;
          font-style: italic;font-weight: 500;text-align: center;
          padding: 1em 0 ;background-color: rgba(0,0,0,0.1);
+         white-space: nowrap;overflow-y: scroll;
        }
    </style>
  <section >
@@ -347,14 +348,14 @@
           </em>
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em> 
-            <em>    let people4=new range.circle({
-              id:"click4-div",
+            <em>     let circle4=new range.circle({
+              id:"circle4-div",
               width:180,
-              strokewidth:15,
-              percent:40,
+              strokewidth:30,
+              percent:72,
               rounded:true,
-              fontsize:33,
-              color:"white",
+              fontsize:25,
+              color:"linear-gradient(60deg,lightblue,blue)",
               textcolor:"white",
               textbold:100,
               track:true,
@@ -363,13 +364,21 @@
               trackcolor:"",
               unit:"%",
               boxshadow:true,
-              fillbackground:"red"
+              widestroke:true,
+              fillbackground:"rgb(70,70,70)",
+              balltip:true,
+              gradient:{
+                    type:"radial-gradient",
+                    colors:["lightblue 0%","blue  100%"],
+                    orientation:{x:50,y:50,fill:100}
+              },
+              widetrack:true,
               })
             </em>
             /*
             <em class="text-gray">
-              to disable the timer effect onclick set  (clickeffect:false);
-              note custom timer can also be made.
+              The setInterval function can also be use in the 
+              range function 
             </em>
             */
         </code>
@@ -633,15 +642,15 @@
           </em>
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em> 
-            <em>   let circle5=new range.circle({
+            <em>    let circle5=new range.circle({
               id:"circle5-div",
               width:180,
               strokewidth:15,
               percent:30,
-              rounded:false,
-              fontsize:33,
-              color:"red",
-              textcolor:"red",
+              rounded:true,
+              fontsize:30,
+              color:"rgb(102, 73, 231)",
+              textcolor:"rgb(102, 73, 231)",
               textbold:100,
               track:true,
               indicator:true,
@@ -649,10 +658,18 @@
               trackcolor:"",
               widetrack:true,
               trackfit:true,
-              dashed:true,
               unit:"%",
+            boxshadow:"0.2   0.1",
+            widestroke:true,
+              breakcolor:"white",
+              gradient:{
+                    type:"radial-gradient",
+                    colors:["lightblue 0%","blue  100%"],
+                    orientation:{x:50,y:50,fill:100}
+              },
               breakcolor:"white"
               })
+            
             </em>
         </code>
       </pre>
@@ -912,7 +929,7 @@
  </section>
 
  <!-- <script type="text/javascript" src="https://azudi.github.io/ranges/range/range.js"></script> -->
-   <script src="range/ranges.js"></script>
+   <script src="range/range.js"></script>
    <script type="text/javascript">
  
 
@@ -1058,10 +1075,10 @@
   width:180,
   strokewidth:15,
   percent:30,
-  rounded:false,
-  fontsize:33,
-  color:"red",
-  textcolor:"red",
+  rounded:true,
+  fontsize:30,
+  color:"rgb(102, 73, 231)",
+  textcolor:"rgb(102, 73, 231)",
   textbold:100,
   track:true,
   indicator:true,
@@ -1069,11 +1086,16 @@
   trackcolor:"",
   widetrack:true,
   trackfit:true,
-  dashed:true,
   unit:"%",
-
+boxshadow:"0.2   0.1",
+widestroke:true,
+  breakcolor:"white",
+  gradient:{
+        type:"radial-gradient",
+        colors:["lightblue 0%","blue  100%"],
+        orientation:{x:50,y:50,fill:100}
+  },
   breakcolor:"white"
-  //fillbackground:"transparent"
   })
 
 
@@ -1170,27 +1192,28 @@
   let people4=new range.circle({
   id:"click4-div",
   width:180,
-  strokewidth:15,
+  strokewidth:30,
   percent:72,
-  rounded:false,
-  fontsize:27,
-  color:"rgb(255, 115, 0)",
-  textcolor:"rgba(255,255,255,0.7)",
+  rounded:true,
+  fontsize:25,
+  color:"linear-gradient(60deg,lightblue,blue)",
+  textcolor:"white",
   textbold:100,
   track:true,
   indicator:true,
   animate:false,
   trackcolor:"",
   unit:"%",
-  boxshadow:true,
+  boxshadow:"0.3 0.1",
   widestroke:true,
-  fillbackground:"red",
-  arrowtip:true,
+  fillbackground:"rgb(70,70,70)",
+  balltip:true,
   gradient:{
         type:"radial-gradient",
-        colors:["orange 0%","rgb(255, 115, 0)  50%"],
-        orientation:{x:100,y:100,fill:100}
+        colors:["lightblue 0%","blue  100%"],
+        orientation:{x:50,y:50,fill:100}
   },
+  widetrack:true,
   })
   
  

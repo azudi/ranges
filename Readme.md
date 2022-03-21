@@ -75,8 +75,8 @@ let people=new range.circle({
     unit:                       "%",       // the unit to be displayed in the indicator  (string)
     balltip:                   true,       // set the end tip of the stroke to be round  (true/false)
     arrowtip:                  true,       // set the end of the stroke to be an arrow  (true/false)
-    boxshadow:                 true,       // set the inset box shadow of the track  (true/false)
-    fillbackground:           "red",           // these is set to the background color of the progress bar  (--string)
+    boxshadow:                 "0.3 0.1",  // set the inset box shadow of the track--  first value is for the inner-shadow and second is for the outer shadow   (-string)
+    fillbackground:           "red",       // these is set to the background color of the progress bar (if fillbackground is set, dashed is set to false) (--string)
     gradient:                  object,     // set the background gradient of the stroke   
     type:           "linear gradient",     // To set the type of gradient --property of gradient-- (--string)
     colors:                    object,     // To set the gradient color --property of gradient-- (["red 0%","orange 30%","teal 100%"])

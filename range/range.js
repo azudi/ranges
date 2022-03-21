@@ -387,7 +387,7 @@ const range = {
    r=${width / 2 - strokewidth} 
    fill='transparent'
    style='
-   stroke-width:${widewidth}px;
+   stroke-width:${widewidth+1}px;
    stroke:${breakcolor};
    stroke-dashoffset:0 0;
    stroke-dasharray:6 15;
@@ -505,7 +505,7 @@ const range = {
 
 
       //code for box shadow
-        if(boxshadow && boxshadow==true){ 
+        if(boxshadow && boxshadow.lastIndexOf(" ")){ 
        let shadow= document.createElement("span")
        let shadowinner= document.createElement("span")
           shadow.style.cssText=`
@@ -519,17 +519,17 @@ const range = {
           left:${strokewidth*2}px;width:calc(100% - ${4*strokewidth}px);
           height:calc(100% - ${4*strokewidth}px);
           border-radius:inherit;
-          box-shadow: 2px 4px 10px rgba(0,0,0,0.09),
-       -2px -4px 10px rgba(0,0,0,0.09),
-       inset -2px -4px 10px rgba(0,0,0,0.05),
-      inset 2px 4px 10px rgba(0,0,0,0.05);
+          box-shadow: 2px 4px 10px rgba(0,0,0,${boxshadow.substring(0,boxshadow.lastIndexOf(" "))}),
+       -2px -4px 10px rgba(0,0,0,${boxshadow.substring(0,boxshadow.lastIndexOf(" "))}),
+       inset -2px -4px 10px rgba(0,0,0,${boxshadow.substring(boxshadow.lastIndexOf(" "),boxshadow.length)}),
+      inset 2px 4px 10px rgba(0,0,0,${boxshadow.substring(boxshadow.lastIndexOf(" "),boxshadow.length)});
           `
           shadow.appendChild(shadowinner)
         moduleClick.appendChild(shadow)
       moduleClick.style.cssText=`
       ${moduleClick.style.cssText};
-      box-shadow:inset 2px 6px 10px rgba(0,0,0,0.1),
-      inset -2px -6px 10px rgba(0,0,0,0.1);
+      box-shadow:inset 2px 6px 10px rgba(0,0,0,0.15),
+      inset -2px -6px 10px rgba(0,0,0,0.15);
       border-radius:50%;
       `
         }
