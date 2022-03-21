@@ -1,4 +1,4 @@
-# ranges.js
+# range.js
 ===========
 
 [![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.2&x2=0)](https://badge.fury.io/js/vanilla-tilt)
