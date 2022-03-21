@@ -1,6 +1,6 @@
 
 
-export default range = {
+ export default range = {
   //these code below is for rectangular loader
   rectangle: function ({
     id,
@@ -279,11 +279,14 @@ export default range = {
     balltip,
     arrowtip,
     fillbackground,
-    breakcolor
+    breakcolor,
+    boxshadow,
+    widestroke,
+    gradient
   }) {
     //code for error
     if (percent > 100) {
-      console.log("percent cannot ne greater than 100");
+      console.log("percent cannot be greater than 100");
     }
 
     if (document.getElementById(id)) {
@@ -297,6 +300,8 @@ export default range = {
       color ? (color = color) : (color = "black");
       trackfit ? (track = false) : (track = track);
       dashed ? (track = false) : (track = track);
+      let rangevalue=5.8;
+      widestroke?rangevalue=(rangevalue*0.99):rangevalue=5.8
 
       for (let i = 0; i < moduleClick.children.length; i++) {
         if (moduleClick.children[i].tagName === "SPAN") {
@@ -440,7 +445,7 @@ export default range = {
              transform:rotateZ(${(percent / 100) * 360}deg)  
            `;
           tip.style.cssText = `
-             position:absolute;top:0;
+             position:absolute;top:0.5px;
              left:50%;width:${strokewidth * 2}px;
              height:${strokewidth * 2}px;
              border-radius:inherit;
@@ -448,7 +453,9 @@ export default range = {
            `;
           ball.appendChild(tip);
           moduleClick.appendChild(ball);
-        } //end of code fro balltip
+        } //end of code for balltip
+
+
         //code below for arrowtip
 
         if (arrowtip && arrowtip == true) {
@@ -472,26 +479,135 @@ export default range = {
         `;
           ball.appendChild(tip);
           moduleClick.appendChild(ball);
-        } //end of code fro arrowtip
+        } //end of code for arrowtip
+
+   
 
         moduleClickChild.style.cssText = `width:${width}px;
    height:${width}px;transform:rotateZ(-90deg);z-index:20 !important;
    `;
-        moduleClickChildNext.style.cssText = `stroke:${color ? color : black};
-   stroke-width:${strokewidth}px;
+        moduleClickChildNext.style.cssText = `
+        stroke:${color ? color : black};
+   stroke-width:${widestroke?(strokewidth*2)-1:strokewidth}px;
    cy:${width / 2};
    cx:${width / 2};
    r:${width / 2 - strokewidth};
    fill:transparent;
    stroke-dashoffset:0;
-   stroke-dasharray: ${(percent * ((5.8 * width) / 2)) / 100} ${
-          ((100 - percent) * ((5.8 * width) / 2)) / 100
+   stroke-dasharray: ${(percent * ((rangevalue * width) / 2)) / 100} ${
+          ((100 - percent) * ((rangevalue * width) / 2)) / 100
         };
    stroke-linecap:${rounded ? "round" : "none"};
    animation:2s infinite linear svgroller
    `;
-      } //code for begin of stopwatch
+      } 
+       
+
+
+      //code for box shadow
+        if(boxshadow && boxshadow==true){ 
+       let shadow= document.createElement("span")
+       let shadowinner= document.createElement("span")
+          shadow.style.cssText=`
+             width:100%;height:100%;
+             border-radius:50%;
+             position:absolute;top:0;left:0;
+             
+          `
+          shadowinner.style.cssText=`
+          position:absolute;top:${strokewidth*2}px;
+          left:${strokewidth*2}px;width:calc(100% - ${4*strokewidth}px);
+          height:calc(100% - ${4*strokewidth}px);
+          border-radius:inherit;
+          box-shadow: 2px 4px 10px rgba(0,0,0,0.09),
+       -2px -4px 10px rgba(0,0,0,0.09),
+       inset -2px -4px 10px rgba(0,0,0,0.05),
+      inset 2px 4px 10px rgba(0,0,0,0.05);
+          `
+          shadow.appendChild(shadowinner)
+        moduleClick.appendChild(shadow)
+      moduleClick.style.cssText=`
+      ${moduleClick.style.cssText};
+      box-shadow:inset 2px 6px 10px rgba(0,0,0,0.1),
+      inset -2px -6px 10px rgba(0,0,0,0.1);
+      border-radius:50%;
+      `
+        }
+          //end of code for box shadow
+
+          //code for gradient
+            if(gradient){
+               let stop=""
+                  if(gradient.colors){
+                  for(let i=0;i<gradient.colors.length;i++){
+                    stop=`${stop}  <stop
+                    offset="${gradient.colors[i].substring(gradient.colors[i].lastIndexOf(" "),gradient.colors[i].length)}" style="stop-color:${gradient.colors[i].substring(0,gradient.colors[i].lastIndexOf(" "))}; stop-opacity:1"
+                  ></stop>`
+                  }
+                }
+         
+                //code below for linear gradient 
+              if(gradient.type=="linear-gradient"){
+             
+              moduleClickChild.innerHTML=`
+              
+                <linearGradient id="grad" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
+                ${stop}
+                </linearGradient>
+
+                <circle
+                stroke="url(#grad)"
+                style='
+                stroke-width:${widestroke?(strokewidth*2):strokewidth}px;
+                cy:${width / 2};
+                cx:${width / 2};
+                r:${width / 2 - strokewidth};
+                fill:transparent;
+                stroke-dashoffset:0;
+                stroke-dasharray: ${(percent * ((rangevalue * width) / 2)) / 100} ${
+                        ((100 - percent) * ((rangevalue * width) / 2)) / 100
+                      };
+                stroke-linecap:${rounded ? "round" : "none"};
+                '
+                ></circle>
+             
+              `}
+               //end of code for linear gradient
+
+           //code below for radial gradient
+            if(gradient.type=="radial-gradient"){
+             
+            moduleClickChild.innerHTML=`
+            
+              <radialGradient id="grad" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
+              ${stop}
+              </radialGradient>
+
+              <circle
+              stroke="url(#grad)"
+              style='
+              stroke-width:${widestroke?(strokewidth*2):strokewidth}px;
+              cy:${width / 2};
+              cx:${width / 2};
+              r:${width / 2 - strokewidth};
+              fill:transparent;
+              stroke-dashoffset:0;
+              stroke-dasharray: ${(percent * ((rangevalue * width) / 2)) / 100} ${
+                      ((100 - percent) * ((rangevalue * width) / 2)) / 100
+                    };
+              stroke-linecap:${rounded ? "round" : "none"};
+              '
+              ></circle>
+           
+            `
+                  }
+         //end of code for radial gradient
+            }
+          // end of code for gradient  
+    
+        
     }
+   
   },
   //the code below is for line svg
   line: function ({
