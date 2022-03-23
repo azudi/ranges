@@ -1,6 +1,6 @@
 {
-  "name": "range",
-  "version": "1.1.2",
+  "name": "prog-range",
+  "version": "1.1.5",
   "description": "light weight progress bars",
   "main": "range/module/range.js",
   "scripts": {
@@ -15,7 +15,8 @@
     "ranges",
     "range",
     "counter",
-    "stopwatch"
+    "stopwatch",
+    "progress"
   ],
   "author": "jerry azubuike",
   "license": "ISC",

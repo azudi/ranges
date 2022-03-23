@@ -1,5 +1,6 @@
 
-export default range = {
+  /*eslint-disable*/
+const range = {
   //these code below is for rectangular loader
   rectangle: function ({
     id,
@@ -134,7 +135,7 @@ export default range = {
         moduleClickChild.style.cssText = `width:${width}px;
     height:${width}px;fill:transparent;
     `;
-        moduleClickChildNext.style.cssText = `stroke:${color ? color : black};
+        moduleClickChildNext.style.cssText = `stroke:${color ? color : "black"};
     stroke-width:${strokewidth}px;
     y:${0};
     x:${0};
@@ -201,7 +202,7 @@ export default range = {
       moduleClickChild.style.cssText = `width:${width}px;
     height:${width}px;fill:transparent;
     `;
-      moduleClickChildNext.style.cssText = `stroke:${color ? color : black};
+      moduleClickChildNext.style.cssText = `stroke:${color ? color : "black"};
     stroke-width:${strokewidth}px;
     y:${0};
     x:${0};
@@ -294,7 +295,6 @@ export default range = {
       const moduleClick = document.getElementById(id);
       const moduleClickChild = moduleClick.children[0];
       const moduleClickChildNext = moduleClick.children[0].children[0];
-      document.getElementById(id).children[0].children[0];
       fillbackground ? (dashed = false) : (dashed = dashed);
       unit ? (unit = unit) : (unit = "%");
       width ? (width = width) : (width = 200);
@@ -346,7 +346,7 @@ export default range = {
    justify-content:center;
    align-items:center;
    font-weight:${textbold ? textbold : 300};
-   color:${textcolor ? textcolor : black};
+   color:${textcolor ? textcolor : "black"};
    font-size:${fontsize}px;
    `; //end of code to show the percent in number
 
@@ -488,7 +488,7 @@ export default range = {
    height:${width}px;transform:rotateZ(-90deg);z-index:20 !important;
    `;
         moduleClickChildNext.style.cssText = `
-        stroke:${color ? color : black};
+        stroke:${color ? color : "black"};
    stroke-width:${widestroke?(strokewidth*2)-1:strokewidth}px;
    cy:${width / 2};
    cx:${width / 2};
@@ -740,7 +740,7 @@ export default range = {
         moduleClickChild.style.cssText = `width:${width}px;
   height:${width}px;transform:rotateZ(-90deg);z-index:20 !important;
   `;
-        moduleClickChildNext.style.cssText = `stroke:${color ? color : black};
+        moduleClickChildNext.style.cssText = `stroke:${color ? color : "black"};
   stroke-width:${strokewidth}px;
   cy:${width / 2};
   cx:${width / 2};
@@ -788,9 +788,17 @@ export default range = {
       color?color=color:color="white"
       background?background=background:background="darkblue";
       fillpoint?fillpoint=fillpoint:fillpoint=1
-    
-      
-
+          for(let p=0;p<moduleClick.children.length;p++){
+            moduleClick.children[p].remove()
+          }
+          for(let p=0;p<moduleClick.children.length;p++){
+            moduleClick.children[p].remove()
+          }
+          for(let p=0;p<moduleClick.children.length;p++){
+            moduleClick.children[p].remove()
+          }
+        
+  
           for(let i=0;i<pointcount;i++){
             let pointbox=document.createElement("div")
               let pointnumber=document.createElement("span")
@@ -883,3 +891,6 @@ export default range = {
     }
   }
 };
+
+  
+  export default range;
