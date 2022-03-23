@@ -72,6 +72,7 @@ let people=new range.circle({
     animate:                   true,       // to animate the liner progress bar (can only functio if the ranges.css is loaded)   (true/false)
     widetrack:                 true,       // these is set to the track to be wider than the progress bar  (true/false)
     dashed:                    true,       // these is to set track in dashed track  (true/false)
+    dashtrack:                 "2 3",       // these is to set track breaking intervals in dashed track. It can recieve more than two parameter  (true/false)
     unit:                       "%",       // the unit to be displayed in the indicator  (string)
     balltip:                   true,       // set the end tip of the stroke to be round  (true/false)
     arrowtip:                  true,       // set the end of the stroke to be an arrow  (true/false)
@@ -83,8 +84,13 @@ let people=new range.circle({
     orientation:               object,     // To set the gradient orientation --property of gradient-- (x:orientation along the x-axis, y:orientation along the y-axis, fill:capacity occupied by the gradient)  
     breakcolor:  "rgb(245,245,245)",       // To set the dashed track breaks color -- (these color should be the same with the background color || if background is  transparent set to the background of the parent element)   (--string) 
     ratio:                        2,       // To set the number of divided tracks (only available in roller function)   (--number)
-  
-}
+    pointcount:                  5,       // set the number of point to be displayed-- only in point function  (--number)
+    background:              "navy",       // set the background of the success box -- only in point function  (--string)
+    fillpoint:                    3,       // set the number of success box to be checked --only in point function (--number)
+    pointwidth:                   35,       // To set the width of the point-box --only in point function (--number)
+    activecolor:               "white",      // change the color of the success point-box --only in point function (--string)
+    disabledcolor: "rgba(70,70,70,0.3)",     // color   of non-success box to be checked --only in point function (--string)
+    titles:    ["Account","BVN","Contact","Verified","Active"],       // the titles to be displayed on each point-box (the pointcount and the titles must be the same to avoid errors) --only in point function (--number)
 ```
 
 

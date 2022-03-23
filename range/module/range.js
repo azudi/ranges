@@ -1,5 +1,4 @@
 
-
 export default range = {
   //these code below is for rectangular loader
   rectangle: function ({
@@ -17,6 +16,7 @@ export default range = {
     unit,
     track,
     dashed,
+    dashtrack,
     breakcolor
   }) {
     //code for error
@@ -119,7 +119,7 @@ export default range = {
           fill:transparent;
           width:${width};
           height:${width};
-          stroke-dasharray:5 10
+          stroke-dasharray:${dashtrack?dashtrack:"5 15"}
           '
          />
  </svg>`;
@@ -282,7 +282,8 @@ export default range = {
     breakcolor,
     boxshadow,
     widestroke,
-    gradient
+    gradient,
+    dashtrack,
   }) {
     //code for error
     if (percent > 100) {
@@ -380,21 +381,21 @@ export default range = {
         let svg2 = document.createElement("span");
         svg2.classList.add("roller_rx_range_rx");
         svg2.style.cssText = `width:${width}px;
-   height:${width}px;transform:rotateZ(-90deg);
-   position:absolute;top:0;left:0;`;
-        svg2.innerHTML = `<svg width=${width}px height=${width}px>
-   <circle cy=${width / 2} cx=${width / 2} 
-   r=${width / 2 - strokewidth} 
-   fill='transparent'
-   style='
-   stroke-width:${widewidth+1}px;
-   stroke:${breakcolor};
-   stroke-dashoffset:0 0;
-   stroke-dasharray:6 15;
-   stroke-linecap:none;
-   '
-   />
-   </svg>`;
+        height:${width}px;transform:rotateZ(-90deg);
+        position:absolute;top:0;left:0;`;
+              svg2.innerHTML = `<svg width=${width}px height=${width}px>
+        <circle cy=${width / 2} cx=${width / 2} 
+        r=${width / 2 - strokewidth} 
+        fill='transparent'
+        style='
+        stroke-width:${widewidth+1}px;
+        stroke:${breakcolor};
+        stroke-dashoffset:0 0;
+        stroke-dasharray:${dashtrack?dashtrack:"5 15"};
+        stroke-linecap:none;
+        '
+        />
+        </svg>`;
         moduleClick.appendChild(svg2);
       }
 
@@ -404,19 +405,19 @@ export default range = {
         let svg = document.createElement("span");
         svg.classList.add("roller_rx_range_rx2");
         svg.style.cssText = `width:${width}px;
-   height:${width}px;transform:rotateZ(-90deg);
-   position:absolute;top:0;left:0;z-index:-1`;
-        svg.innerHTML = `<svg width=${width}px height=${width}px>
-   <circle cy=${width / 2} cx=${width / 2} 
-   r=${width / 2 - strokewidth} 
-   fill='transparent'
-   style='
-   stroke-width:${widewidth}px;
-   stroke:rgba(235,235,235,1);
-   stroke-linecap:${rounded ? "round" : "none"};
-   '
-   />
-   </svg>`;
+        height:${width}px;transform:rotateZ(-90deg);
+        position:absolute;top:0;left:0;z-index:-1`;
+              svg.innerHTML = `<svg width=${width}px height=${width}px>
+        <circle cy=${width / 2} cx=${width / 2} 
+        r=${width / 2 - strokewidth} 
+        fill='transparent'
+        style='
+        stroke-width:${widewidth}px;
+        stroke:rgba(235,235,235,1);
+        stroke-linecap:${rounded ? "round" : "none"};
+        '
+        />
+        </svg>`;
         moduleClick.appendChild(svg);
       } //end of code for dashed and trackfit
 
@@ -609,6 +610,8 @@ export default range = {
     }
    
   },
+
+  
   //the code below is for line svg
   line: function ({
     id,
@@ -761,6 +764,122 @@ export default range = {
           moduleClickChild.style.cssText = `${moduleClickChild.style.cssText} transition:linear 0s; transform:rotateZ(0deg)`;
         }, 1450);
       }, 1500);
+    }
+  },
+
+  //code below for the point progress
+  point: function ({
+    id,
+    pointcount,
+    color,
+    background,
+    fillpoint,
+    activecolor,
+    titles,
+    pointwidth,
+    fontsize,
+    disabledcolor
+  }) 
+  {
+    if(document.getElementById(id) && titles.length==pointcount) {
+
+      const moduleClick = document.getElementById(id);
+      pointcount?pointcount=pointcount:pointcount=1
+      color?color=color:color="white"
+      background?background=background:background="darkblue";
+      fillpoint?fillpoint=fillpoint:fillpoint=1
+    
+      
+
+          for(let i=0;i<pointcount;i++){
+            let pointbox=document.createElement("div")
+              let pointnumber=document.createElement("span")
+                let pointindicate=document.createElement("span")
+                let pointtext=document.createElement("span")
+                  pointnumber.innerHTML="&#10003;"
+                  pointnumber.style.cssText=`
+                    font-style:normal;width:${pointwidth}px;height:${pointwidth}px;
+                    background:transparent;
+                    color:${disabledcolor};display:flex;
+                    border-radius:50%;
+                    justify-content:center;
+                    align-items:center;font-weight:900;
+                    border:3px solid ${disabledcolor};
+                    z-index:2;font-size:${fontsize}px
+                  `
+                  pointnumber.classList.add("point_number")
+                  pointindicate.style.cssText=`
+                 z-index:1;width:calc(100% - ${pointwidth}px);
+                 height:4px;display:block;background: ${disabledcolor}; 
+                `
+                pointindicate.classList.add("point_indicate")
+              pointbox.style.cssText=`
+                width:${100/pointcount}%;display:flex;
+                justify-content:right;
+                align-items:center;position:relative;
+              `
+             if(i>0){
+                pointbox.appendChild(pointindicate)
+                }
+                else{
+                  pointbox.style.cssText=`${pointbox.style.cssText} width:auto`
+                }
+          
+
+                  if(titles){
+              
+                    pointtext.innerHTML=titles[i]
+                      pointtext.style.cssText=`
+                        position:absolute;width:100%;
+                        text-align:right;background:transparent;
+                        left:0;color:black;font-weight:500;
+                        top:-90%;font-size:${fontsize}px
+                      `
+                      pointbox.appendChild(pointtext)
+                  
+                  } 
+
+           
+                  pointbox.appendChild(pointnumber);
+            moduleClick.appendChild(pointbox)
+       
+          }
+
+           //code below is to indicate the moved progress point
+       for(let j=0;j<pointcount;j++){
+        if(j<fillpoint){
+          moduleClick.children[j].children[0].classList.add("point_filled_box")
+          moduleClick.children[j].children[0].style.cssText=`${moduleClick.children[j].children[0].style.cssText};
+          background:${background};
+          border:none ;
+          `
+          moduleClick.children[j].children[1].style.cssText=`${moduleClick.children[j].children[1].style.cssText};
+          background:transparent;color:${background};
+              `          
+              if(moduleClick.children[j].children.length<3){
+                moduleClick.children[j].children[1].style.cssText=`${moduleClick.children[j].children[1].style.cssText};
+          background:${background};color:${activecolor};
+          border:none
+              `
+              moduleClick.children[j].children[0].style.cssText=`${moduleClick.children[j].children[0].style.cssText};
+              background:transparent;color:${background};
+                  `               
+              }
+             if(moduleClick.children[j].children[2]){
+              moduleClick.children[j].children[2].style.cssText=`${moduleClick.children[j].children[2].style.cssText};
+              background:${background};color:${activecolor};
+              border:none ;
+              `
+            }
+           
+        }
+       
+      }
+       
+           
+        moduleClick.style.cssText=`
+          display:flex;width:100%;justify-content:center
+        `
     }
   }
 };

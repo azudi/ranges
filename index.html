@@ -303,6 +303,7 @@
                 trackfit:true,
                 dashed:true,
                 unit:"%",
+                dashtrack:"2 3",
                 breakcolor:"white",
                 })
               </em>
@@ -926,6 +927,54 @@
 </div>
 
 
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="point-div"&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em>
+
+            <em>   let points=new range.point({
+              id:"point-div",
+              pointcount:5,
+              background:"navy",
+              fillpoint:3,
+              pointwidth:35,
+              activecolor:"white",
+              fontsize:14,
+              disabledcolor:"rgba(70,70,70,0.3)",
+              titles:["Account","BVN","Contact","Verified","Active"]
+              })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-8 range-container">
+      <div id="point-div"> 
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
  </section>
 
 <<<<<<< HEAD
@@ -993,6 +1042,7 @@
      fontsize:30,
      unit:"px",
      dashed:true,
+     dashtrack:"2 3",
      breakcolor:"white"
   })
     }
@@ -1045,6 +1095,7 @@
   trackfit:true,
   unit:"%",
   breakcolor:"white",
+  dashtrack:"2 3"
   //fillbackground:"transparent"
   })
 
@@ -1261,6 +1312,7 @@ widestroke:true,
      fontsize:30,
      unit:"px",
      dashed:true,
+     dashtrack:"2 3",
      breakcolor:"white"
   })
 
@@ -1280,6 +1332,18 @@ widestroke:true,
   dashed:true,
   unit:"%",
   fillbackground:"green"
+  })
+
+  let points=new range.point({
+  id:"point-div",
+  pointcount:5,
+  background:"navy",
+  fillpoint:3,
+  pointwidth:35,
+  activecolor:"white",
+  fontsize:14,
+  disabledcolor:"rgba(70,70,70,0.3)",
+  titles:["Account","BVN","Contact","Verified","Active"]
   })
    
 
