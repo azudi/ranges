@@ -624,7 +624,8 @@ const range = {
     indicator,
     roundrange,
     trackcolor,
-    textcolor
+    textcolor,
+    lineborder
   }) {
     //code for error
     if (percent > 100) {
@@ -688,12 +689,21 @@ const range = {
    display:block;
    border-radius:inherit
    `;
+
+
       } //begin for code to animate
 
       if (animate && animate == true) {
         moduleClickChildNext.style.cssText = `${moduleClickChildNext.style.cssText}; width:30%`;
         moduleClickChildNext.classList.add("rx_liner");
       } //end of code to animate
+      
+         //code for lineborder
+    if(lineborder && lineborder==true){
+      moduleClick.style.cssText=`${moduleClick.style.cssText} border:${strokewidth/2}px solid ${color};
+      padding:0.3em 0.5em`
+    }
+    //end of code for lineborder
     }
   },
   roller: function ({
@@ -812,7 +822,7 @@ const range = {
                     color:${disabledcolor};display:flex;
                     border-radius:50%;
                     justify-content:center;
-                    align-items:center;font-weight:900;
+                    align-items:center;font-weight:700;
                     border:3px solid ${disabledcolor};
                     z-index:2;font-size:${fontsize}px
                   `
@@ -841,7 +851,7 @@ const range = {
                       pointtext.style.cssText=`
                         position:absolute;width:100%;
                         text-align:right;background:transparent;
-                        left:0;color:black;font-weight:500;
+                        left:0;color:${disabledcolor};font-weight:500;
                         top:-90%;font-size:${fontsize}px
                       `
                       pointbox.appendChild(pointtext)

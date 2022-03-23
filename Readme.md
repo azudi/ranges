@@ -1,7 +1,7 @@
 # range.js
 ===========
 
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.6&x2=0)](https://badge.fury.io/js/vanilla-tilt)
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.7&x2=0)](https://badge.fury.io/js/vanilla-tilt)
 
 
 It is a light weight library, which provides well customizable svg progress-range. The library does **not require any rendering from the server**, as the whole svg is created on the **client's browser**. However, as it is heavily dependent on the browser.
@@ -76,6 +76,7 @@ let people=new range.circle({
     unit:                       "%",       // the unit to be displayed in the indicator  (string)
     balltip:                   true,       // set the end tip of the stroke to be round  (true/false)
     arrowtip:                  true,       // set the end of the stroke to be an arrow  (true/false)
+    lineborder:                  true,     // set the line function to have a visible border   (true/false)
     boxshadow:                 "0.3 0.1",  // set the inset box shadow of the track--  first value is for the inner-shadow and second is for the outer shadow   (-string)
     fillbackground:           "red",       // these is set to the background color of the progress bar (if fillbackground is set, dashed is set to false) (--string)
     gradient:                  object,     // set the background gradient of the stroke   
