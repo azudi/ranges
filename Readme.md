@@ -1,7 +1,7 @@
 # range.js
 ===========
 
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.5&x2=0)](https://badge.fury.io/js/vanilla-tilt)
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.6&x2=0)](https://badge.fury.io/js/vanilla-tilt)
 
 
 It is a light weight library, which provides well customizable svg progress-range. The library does **not require any rendering from the server**, as the whole svg is created on the **client's browser**. However, as it is heavily dependent on the browser.
