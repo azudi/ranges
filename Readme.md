@@ -90,7 +90,7 @@ let people=new range.circle({
     pointwidth:                   35,       // To set the width of the point-box --only in point function (--number)
     activecolor:               "white",      // change the color of the success point-box --only in point function (--string)
     disabledcolor: "rgba(70,70,70,0.3)",     // color   of non-success box to be checked --only in point function (--string)
-    titles:    ["Account","BVN","Contact","Verified","Active"],       // the titles to be displayed on each point-box (the pointcount and the titles must be the same to avoid errors) --only in point function (--number)
+    titles:    ["Account","BVN","Contact","Verified","Active"],       // the titles to be displayed on each point-box (the pointcount and the titles must be the same to avoid errors) --only in point function (--object)
 ```
 
 
