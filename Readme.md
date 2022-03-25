@@ -1,7 +1,7 @@
 # range.js
 ===========
 
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.7&x2=0)](https://badge.fury.io/js/vanilla-tilt)
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.8&x2=0)]()
 
 
 It is a light weight library, which provides well customizable svg progress-range. The library does **not require any rendering from the server**, as the whole svg is created on the **client's browser**. However, as it is heavily dependent on the browser.
@@ -90,6 +90,7 @@ let people=new range.circle({
     fillpoint:                    3,       // set the number of success box to be checked --only in point function (--number)
     pointwidth:                   35,       // To set the width of the point-box --only in point function (--number)
     activecolor:               "white",      // change the color of the success point-box --only in point function (--string)
+    extratext:     "uprise in bitcoin",      // And added text below the range indicator (It can contain html characters and if use in a full range will not be centralize)--only in circle and semicircle function (--string)
     disabledcolor: "rgba(70,70,70,0.3)",     // color   of non-success box to be checked --only in point function (--string)
     titles:    ["Account","BVN","Contact","Verified","Active"],       // the titles to be displayed on each point-box (the pointcount and the titles must be the same to avoid errors) --only in point function (--object)
 
@@ -131,7 +132,7 @@ import range from 'prog-range';
 
 ### Credits
 
-Original library: [ranges.js](https://github.com/azudi/ranges/tree/main/range)
+Original library: [prog-range](https://github.com/azudi/ranges/tree/main/range)
 
 Original library author: [jerry azubuike](https://twitter.com/@JerryAzubuike5)
 

@@ -12,6 +12,7 @@
      body{
        margin: 0;
        padding: 0;
+    
       
      }
      @media (min-width:992px){
@@ -975,6 +976,72 @@
        <!--end of range container -->
 </div>
 
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="circle9-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em>
+
+            <em>   let circle9=new range.semicircle({
+              id:"circle9-div",
+              width:180,
+            strokewidth:5,
+            percent:95,
+            rounded:false,
+            fontsize:18,
+            color:"navy",
+            textcolor:"navy",
+            textbold:500,
+            track:true,
+            extratext:"Uprise in Bitcoin",
+            indicator:true,
+            animate:false,
+            trackcolor:"",
+            widetrack:true,
+            trackfit:true,
+            unit:"%",
+            widestroke:true,
+            breakcolor:"white",
+            dashtrack:"2 3"
+            })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="circle9-div"> 
+        <svg>
+        <circle/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
  </section>
 
 
@@ -987,13 +1054,14 @@
    width:"100%",
    strokewidth:15,
    percent:47,
-   color:"red",
-   indicator:true,
+   color:"linear-gradient(lightblue,navy)",
+   indicator:false,
    trackcolor:"",
    animate:false,
    textcolor:"white",
    roundrange:"50px",
-   lineborder:true
+   lineborder:true,
+   boxshadow:"0.1 0.2"
    })
 
    
@@ -1007,8 +1075,8 @@
   percent:70,
   rounded:false,
   fontsize:33,
-  color:"red",
-  textcolor:"red",
+  color:"navy",
+  textcolor:"navy",
   textbold:100,
   track:true, 
   indicator:true,
@@ -1028,7 +1096,7 @@
      id:"rect-div",
      width:150,
      strokewidth:20,
-     color:"red",
+     color:"navy",
      track:true,
      trackcolor:"",
      percent:count++,
@@ -1060,8 +1128,8 @@
   percent:65,
   rounded:false,
   fontsize:33,
-  color:"red",
-  textcolor:"red",
+  color:"navy",
+  textcolor:"navy",
   textbold:100,
   track:true,
   indicator:true,
@@ -1081,8 +1149,8 @@
   percent:40,
   rounded:false,
   fontsize:33,
-  color:"red",
-  textcolor:"red",
+  color:"navy",
+  textcolor:"navy",
   textbold:100,
   track:true,
   indicator:true,
@@ -1096,6 +1164,29 @@
   //fillbackground:"transparent"
   })
 
+  let people9=new range.semicircle({
+    id:"circle9-div",
+    width:180,
+  strokewidth:5,
+  percent:95,
+  rounded:false,
+  fontsize:18,
+  color:"navy",
+  textcolor:"navy",
+  textbold:500,
+  track:true,
+  extratext:"Uprise in Bitcoin",
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  widetrack:true,
+  trackfit:true,
+  unit:"%",
+  widestroke:true,
+  breakcolor:"white",
+  dashtrack:"2 3"
+  })
+
 
   
   let people8=new range.circle({
@@ -1105,8 +1196,8 @@
           percent:38,
           rounded:false,
           fontsize:33,
-          color:"red",
-          textcolor:"red",
+          color:"navy",
+          textcolor:"navy",
           textbold:100,
           track:true,
           indicator:true,
@@ -1160,7 +1251,7 @@ widestroke:true,
   percent:80,
   rounded:false,
   fontsize:33,
-  color:"red",
+  color:"navy",
   textcolor:"red",
   textbold:100,
   track:true,
@@ -1192,7 +1283,7 @@ widestroke:true,
           percent:point++,
           rounded:false,
           fontsize:33,
-          color:"red",
+          color:"navy",
           textcolor:"red",
           textbold:100,
           track:true,
@@ -1226,7 +1317,7 @@ widestroke:true,
   percent:43,
   rounded:false,
   fontsize:33,
-  color:"red",
+  color:"navy",
   textcolor:"red",
   textbold:100,
   track:true,
@@ -1274,7 +1365,7 @@ widestroke:true,
   width:100,
   strokewidth:5,
   rounded:false,
-  color:"red",
+  color:"navy",
   animate:false,
   track:false,
   trackcolor:"",
@@ -1286,7 +1377,7 @@ widestroke:true,
     id:"square-div",
      width:100,
      strokewidth:20,
-     color:"red",
+     color:"navy",
      track:true,
      trackcolor:"",
      rounded:false,
@@ -1298,7 +1389,7 @@ widestroke:true,
      id:"rect-div",
      width:150,
      strokewidth:20,
-     color:"red",
+     color:"navy",
      track:true,
      trackcolor:"",
      percent:45,
