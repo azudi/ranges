@@ -1,19 +1,23 @@
-<style type="text/css">
-  
-</style>
-
+<!DOCTYPE html>
+<html>
+  <head>
    <meta name="viewport" content="width=device-width,initial-scale=1">
-   <link rel="stylesheet" type="text/css" href="Font-face/font-face.css">
-   <!-- <link rel="stylesheet" type="text/css" href="range/range.css"> -->
-   <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
-   
-
+      <link rel="stylesheet" type="text/css" href="Font-face/font-face.css">
+      <!-- <link rel="stylesheet" type="text/css" href="range/range.css"> -->
+      <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+   <title>prog-range--simple progress bar library</title>
+  
    <style type="text/css">
      body{
        margin: 0;
-       padding: 0;
-    
-      
+       padding: 0;  
+       font-family: 'Open Sans', sans-serif;
+     }
+     section>em{
+       font-style:normal
      }
      @media (min-width:992px){
      section{
@@ -89,6 +93,9 @@
          white-space: nowrap;overflow-y: scroll;
        }
    </style>
+   </head>
+
+   <body>
  <section >
    <div  class="flex col-md-12">
    <h1 class="flex centered-content col-md-10 col-lg-8 col-sm-11 heading">
@@ -1059,9 +1066,9 @@
    trackcolor:"",
    animate:false,
    textcolor:"white",
-   roundrange:"50px",
+   roundrange:"2px",
    lineborder:true,
-   boxshadow:"0.1 0.2"
+   boxshadow:"0.3 0.2"
    })
 
    
@@ -1252,7 +1259,7 @@ widestroke:true,
   rounded:false,
   fontsize:33,
   color:"navy",
-  textcolor:"red",
+  textcolor:"navy",
   textbold:100,
   track:true,
   indicator:true,
@@ -1271,12 +1278,13 @@ widestroke:true,
     let start=true;
     let point=0
     
-   document.querySelector("#circle8-div").addEventListener("click",function(){
  
-    let revolve=setInterval(() => {
-      if(!start){
-        
+  setInterval(() => {
+    if(point==100){
+      point=0
+    }
   let people7=new range.circle({
+    
   id:"circle8-div",
           width:180,
           strokewidth:15,
@@ -1284,7 +1292,7 @@ widestroke:true,
           rounded:false,
           fontsize:33,
           color:"navy",
-          textcolor:"red",
+          textcolor:"navy",
           textbold:100,
           track:true,
           indicator:true,
@@ -1294,19 +1302,10 @@ widestroke:true,
           trackfit:true,
           unit:"%",
           arrowtip:true,
-          balltip:true,
           breakcolor:"white"
   })
-    }
-    else{
-            clearInterval(revolve)
-          }
 
-       }, 500);
- 
-     
-       start=!start;
-   })
+       }, 200);
 
 
   
@@ -1318,7 +1317,7 @@ widestroke:true,
   rounded:false,
   fontsize:33,
   color:"navy",
-  textcolor:"red",
+  textcolor:"navy",
   textbold:100,
   track:true,
   indicator:true,
@@ -1437,3 +1436,5 @@ widestroke:true,
 
  
    </script>
+   </body>
+   </html>

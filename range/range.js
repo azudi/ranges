@@ -1131,8 +1131,8 @@ const range = {
      
      moduleClick.style.cssText=`
      ${moduleClick.style.cssText};  
-     box-shadow:inset 2px 5px 7px rgba(0,0,0,${boxshadow.substring(0,boxshadow.lastIndexOf(" "))}),
-     inset -2px -5px 7px rgba(0,0,0,${boxshadow.substring(0,boxshadow.lastIndexOf(" "))});
+     box-shadow:inset 2px 4px 5px rgba(0,0,0,0.2),
+     inset -2px -4px 5px rgba(0,0,0,0.2);
      `  
      moduleClickChild.style.cssText=`
      ${moduleClickChild.style.cssText}; 
@@ -1141,6 +1141,7 @@ const range = {
      ` }
      
          //end of code for box shadow
+         
 
     }
   },
