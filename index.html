@@ -4,17 +4,27 @@
    <meta name="viewport" content="width=device-width,initial-scale=1">
       <link rel="stylesheet" type="text/css" href="Font-face/font-face.css">
       <!-- <link rel="stylesheet" type="text/css" href="range/range.css"> -->
-      <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="pages/style/bootstrap.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
    <title>prog-range--simple progress bar library</title>
   
    <style type="text/css">
+     a:hover{
+        color:inherit;text-decoration: none;
+        font-family: 'Open Sans', sans-serif;
+     }
+     
      body{
        margin: 0;
        padding: 0;  
        font-family: 'Open Sans', sans-serif;
+     }
+     .nextpage{
+       border:none;padding:0.3em 2em;background-color: navy;
+       color:white;border-radius: 50px;
+       margin-bottom: 2em;
      }
      section>em{
        font-style:normal
@@ -96,8 +106,8 @@
    </head>
 
    <body>
- <section >
-   <div  class="flex col-md-12">
+ <section>
+   <article  class="flex col-md-12">
    <h1 class="flex centered-content col-md-10 col-lg-8 col-sm-11 heading">
       Types of custom ranges
    </h1>
@@ -107,14 +117,9 @@
      <li>no dependency</li>
      <li>rangejs</li>
    </div>
-          <div class="flex col-md-8 tool">
-            download the javascript file from github or include the cdns below (javascript and css)
-            <span class="show-script">
-              &lt;script type="text/javascript" src="https://azudi.github.io/ranges/range/range.js" &gt; &lt;/script&gt;<br>
-              &lt;script type="text/javascript" src="https://azudi.github.io/ranges/range/range.css"> &lt;/script&gt;
-            </span>
-          </div>
-  </div>
+          
+  </article>
+  <br><br>
 
    <div class="flex col-md-12">
 
@@ -500,9 +505,9 @@
                 trackcolor:"",
                 animate:false,
                 textcolor:"white",
-                roundrange:"5px 40px 5px 20px"
+                roundrange:"50px"
                 })
-
+            </em>
               <em class="text-gray">
                 
               /*
@@ -702,351 +707,7 @@
 
 
 
-<div class="flex col-md-12">
-     
-  <!-- begin of range container -->
-  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
-
-    <!-- code for the display of working codes -->
-     <div class="col-md-6" >
-       <pre>
-        <code >
-          <!-- begin of code header -->
-          <em class="code-head"> // HTML code</em> 
-       <em class="top-code"> &lt;div id="circle6-div"&gt; 
-        &lt;svg&gt; 
-        &lt;circle/&gt; 
-        &lt;/svg&gt; 
-            &lt;/div&gt;
-          </em>
-<!-- end of code header -->
-           <em class="code-head"> // javascript code</em> 
-            <em>   let circle6=new range.circle({
-              id:"circle6-div",
-              width:180,
-              strokewidth:15,
-              percent:30,
-              rounded:false,
-              fontsize:33,
-              color:"red",
-              textcolor:"red",
-              textbold:100,
-              track:true,
-              indicator:true,
-              animate:false,
-              trackcolor:"",
-              widetrack:true,
-              trackfit:true,
-              dashed:true,
-              unit:"%",
-              breakcolor:"white"
-              })
-            </em>
-        </code>
-      </pre>
-     </div>
-     
-    <!-- end for the display of working codes -->
-
-<!-- code below is for the range output -->
-     <div class="col-md-5 range-container">
-      <div id="circle6-div"> 
-        <svg>
-        <circle/>
-        </svg>
-        </div>
-   </div>
-<!--end of code for the range output -->
-   </div>
-       <!--end of range container -->
-</div>
-
-
-
-
-
-<div class="flex col-md-12">
-     
-  <!-- begin of range container -->
-  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
-
-    <!-- code for the display of working codes -->
-     <div class="col-md-6" >
-       <pre>
-        <code >
-          <!-- begin of code header -->
-          <em class="code-head"> // HTML code</em> 
-       <em class="top-code"> &lt;div id="circle7-div"&gt; 
-        &lt;svg&gt; 
-        &lt;circle/&gt; 
-        &lt;/svg&gt; 
-            &lt;/div&gt;
-          </em>
-<!-- end of code header -->
-           <em class="code-head"> // javascript code</em> 
-            <em>    
-              let circle7=new range.circle({
-                id:"circle7-div",
-                width:180,
-                strokewidth:15,
-                percent:43,
-                rounded:false,
-                fontsize:33,
-                color:"red",
-                textcolor:"red",
-                textbold:100,
-                track:true,
-                indicator:true,
-                animate:false,
-                trackcolor:"",
-                widetrack:true,
-                trackfit:true,
-                unit:"%",
-                arrowtip:true,
-                breakcolor:"white"
-                })
-            </em>
-            <em class="text-gray">
-              /*
-
-              //these progress barr cannot be use fro animation or stopwatch only static progress range 
-              //code below for click stopwatch 
-              let start=true;
-              let point=0
-              
-             document.querySelector("#circle7-div").addEventListener("click",function(){
-           
-              let revolve=setInterval(() => {
-                if(!start){
-                  let people7=new range.circle({
-                    id:"circle7-div",
-                    width:180,
-                    strokewidth:15,
-                    percent:point++,
-                    rounded:false,
-                    fontsize:33,
-                    color:"red",
-                    textcolor:"red",
-                    textbold:100,
-                    track:true,
-                    indicator:true,
-                    animate:false,
-                    trackcolor:"",
-                    widetrack:true,
-                    trackfit:true,
-                    unit:"%",
-                    arrowtip:true,
-                    breakcolor:"white"
-                      })
-              }
-              else{
-                      clearInterval(revolve)
-                    }
-          
-                 }, 500);
-           
-               
-                 start=!start;
-             })
-              */
-
-            </em>
-        </code>
-        </code>
-      </pre>
-     </div>
-     
-    <!-- end for the display of working codes -->
-
-<!-- code below is for the range output -->
-     <div class="col-md-5 range-container">
-      <div id="circle7-div"> 
-        <svg>
-        <circle/>
-        </svg>
-        </div>
-   </div>
-<!--end of code for the range output -->
-   </div>
-       <!--end of range container -->
-</div>
-
-
-
-<div class="flex col-md-12">
-     
-  <!-- begin of range container -->
-  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
-
-    <!-- code for the display of working codes -->
-     <div class="col-md-6" >
-       <pre>
-        <code >
-          <!-- begin of code header -->
-          <em class="code-head"> // HTML code</em> 
-       <em class="top-code"> &lt;div id="circle8-div"&gt; 
-        &lt;svg&gt; 
-        &lt;circle/&gt; 
-        &lt;/svg&gt; 
-            &lt;/div&gt;
-          </em>
-<!-- end of code header -->
-           <em class="code-head"> // javascript code</em>
-
-            <em>   let circle8=new range.circle({
-                    id:"circle8-div",
-                      width:180,
-                      strokewidth:15,
-                      percent:38,
-                      rounded:false,
-                      fontsize:33,
-                      color:"red",
-                      textcolor:"red",
-                      textbold:100,
-                      track:true,
-                      indicator:true,
-                      animate:false,
-                      trackcolor:"",
-                      widetrack:true,
-                      trackfit:true,
-                      unit:"%",
-                      arrowtip:true,
-                      balltip:true,
-                      breakcolor:"white"
-              })
-            </em>
-        </code>
-      </pre>
-     </div>
-     
-    <!-- end for the display of working codes -->
-
-<!-- code below is for the range output -->
-     <div class="col-md-5 range-container">
-      <div id="circle8-div"> 
-        <svg>
-        <circle/>
-        </svg>
-        </div>
-   </div>
-<!--end of code for the range output -->
-   </div>
-       <!--end of range container -->
-</div>
-
-
-
-
-
-<div class="flex col-md-12">
-     
-  <!-- begin of range container -->
-  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
-
-    <!-- code for the display of working codes -->
-     <div class="col-md-6" >
-       <pre>
-        <code >
-          <!-- begin of code header -->
-          <em class="code-head"> // HTML code</em> 
-       <em class="top-code"> &lt;div id="point-div"&gt; 
-            &lt;/div&gt;
-          </em>
-<!-- end of code header -->
-           <em class="code-head"> // javascript code</em>
-
-            <em>   let points=new range.point({
-              id:"point-div",
-              pointcount:5,
-              background:"navy",
-              fillpoint:3,
-              pointwidth:35,
-              activecolor:"white",
-              fontsize:14,
-              disabledcolor:"rgba(70,70,70,0.3)",
-              titles:["Account","BVN","Contact","Verified","Active"]
-              })
-            </em>
-        </code>
-      </pre>
-     </div>
-     
-    <!-- end for the display of working codes -->
-
-<!-- code below is for the range output -->
-     <div class="col-md-8 range-container">
-      <div id="point-div"> 
-        </div>
-   </div>
-<!--end of code for the range output -->
-   </div>
-       <!--end of range container -->
-</div>
-
-
-
-<div class="flex col-md-12">
-     
-  <!-- begin of range container -->
-  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
-
-    <!-- code for the display of working codes -->
-     <div class="col-md-6" >
-       <pre>
-        <code >
-          <!-- begin of code header -->
-          <em class="code-head"> // HTML code</em> 
-       <em class="top-code"> &lt;div id="circle9-div"&gt; 
-        &lt;svg&gt; 
-        &lt;circle/&gt; 
-        &lt;/svg&gt; 
-            &lt;/div&gt;
-          </em>
-<!-- end of code header -->
-           <em class="code-head"> // javascript code</em>
-
-            <em>   let circle9=new range.semicircle({
-              id:"circle9-div",
-              width:180,
-            strokewidth:5,
-            percent:75,
-            rounded:false,
-            fontsize:18,
-            color:"navy",
-            textcolor:"navy",
-            textbold:500,
-            track:true,
-            extratext:"Uprise in Bitcoin",
-            indicator:true,
-            animate:false,
-            trackcolor:"",
-            widetrack:true,
-            trackfit:true,
-            unit:"%",
-            widestroke:true,
-            breakcolor:"white",
-            dashtrack:"2 3"
-            })
-            </em>
-        </code>
-      </pre>
-     </div>
-     
-    <!-- end for the display of working codes -->
-
-<!-- code below is for the range output -->
-     <div class="col-md-5 range-container">
-      <div id="circle9-div"> 
-        <svg>
-        <circle/>
-        </svg>
-        </div>
-   </div>
-<!--end of code for the range output -->
-   </div>
-       <!--end of range container -->
-</div>
-
+    <div class="flex col-12"><button class="nextpage"><a href="pages/nextpage.html">Next page</a></button></div>
 
 
  </section>
@@ -1061,14 +722,14 @@
    width:"100%",
    strokewidth:15,
    percent:47,
-   color:"linear-gradient(lightblue,navy)",
+   color:"linear-gradient(purple,navy)",
    indicator:false,
    trackcolor:"",
    animate:false,
    textcolor:"white",
-   roundrange:"2px",
+   roundrange:"50px",
    lineborder:true,
-   boxshadow:"0.3 0.2"
+   boxshadow:"0 0.1"
    })
 
    
@@ -1080,16 +741,14 @@
   width:150,
   strokewidth:15,
   percent:70,
-  rounded:false,
+  rounded:true,
   fontsize:33,
   color:"navy",
   textcolor:"navy",
   textbold:100,
   track:true, 
   indicator:true,
-  animate:false,
   trackcolor:"",
-  unit:"%",
   })
 
   
@@ -1182,7 +841,8 @@
   textcolor:"navy",
   textbold:500,
   track:true,
-  extratext:"Uprise in Bitcoin",
+  extratext:"Uprise of Bitcoin in present nigeria situation",
+  extratextcolor:'rgb(200,200,200)',
   indicator:true,
   animate:false,
   trackcolor:"",
@@ -1199,8 +859,8 @@
   let people8=new range.circle({
   id:"circle8-div",
           width:180,
-          strokewidth:15,
-          percent:38,
+          strokewidth:3,
+          percent:85,
           rounded:false,
           fontsize:33,
           color:"navy",
@@ -1213,8 +873,6 @@
           widetrack:true,
           trackfit:true,
           unit:"%",
-          arrowtip:true,
-          balltip:true,
           breakcolor:"white"
   })
 
@@ -1268,44 +926,14 @@ widestroke:true,
   widetrack:false,
   trackfit:true,
   dashed:true,
+  dashtrack:"2 3",
   unit:"%",
-   balltip:true,
+  balltip:true,
   breakcolor:"white"
   //fillbackground:"transparent"
   })
 
 
-    let start=true;
-    let point=0
-    
- 
-  setInterval(() => {
-    if(point==100){
-      point=0
-    }
-  let people7=new range.circle({
-    
-  id:"circle8-div",
-          width:180,
-          strokewidth:15,
-          percent:point++,
-          rounded:false,
-          fontsize:33,
-          color:"navy",
-          textcolor:"navy",
-          textbold:100,
-          track:true,
-          indicator:true,
-          animate:false,
-          trackcolor:"",
-          widetrack:true,
-          trackfit:true,
-          unit:"%",
-          arrowtip:true,
-          breakcolor:"white"
-  })
-
-       }, 200);
 
 
   
@@ -1369,7 +997,7 @@ widestroke:true,
   track:false,
   trackcolor:"",
   percent:60,
-  ratio:2
+  ratio:2,
   })
   
   new range.rectangleroller({
@@ -1429,11 +1057,25 @@ widestroke:true,
   pointwidth:35,
   activecolor:"white",
   fontsize:14,
+  pointtextlabel:'number',
   disabledcolor:"rgba(70,70,70,0.35)",
   titles:["Account","BVN","Contact","Verified","Active"]
   })
    
+  
+  let piechart=new range.piechart({
+    id:"pie-chart",
+    width:200,
+    strokewidth:40,
+    piecolor:["teal","orange","aqua","lightgreen"],
+    pierange:[40,20,20,10],
+    strokepattern:[50,18,26,35],
+    stroketitle:["New arrival","Depature","Gross outcome display","Intrest"],
+    strokepatternbackground:"white"
+  })
 
+  
+ 
  
    </script>
    </body>
