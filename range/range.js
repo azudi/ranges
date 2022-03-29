@@ -1421,7 +1421,7 @@ const range = {
       moduleClickPie.onmouseleave=function(){
         setTimeout(()=>{
           textdiv.style.transform="scale(0)"
-        },1000)
+        },500)
     
     }
 
@@ -1498,13 +1498,77 @@ const range = {
     }
 
  moduleClickPie.appendChild(textdiv)
-    if(moduleClickPie.getBoundingClientRect().right<160){
+    if(moduleClickPie.getBoundingClientRect().right<180){
        textdiv.style.cssText=`${textdiv.style.cssText};left:-140px;top:${strokewidth/2}px`
     } 
  moduleClickPie.style.cssText=`width:${width}px;height:${width}px`
 
   }
  
-}//end of code for piechart
+},
+//end of code for piechart
 
+linechart: function ({
+  id,
+  linerchartrange,
+  width,
+  strokewidth,
+  background,
+  linerchartcolor,
+  lineprop,
+  boxshadow,
+  roundrange,
+}) {
+ 
+
+  if (document.getElementById(id)) {
+    const moduleClicklinechart = document.getElementById(id);
+      moduleClicklinechart.style.cssText=`
+        width:${width};height:${strokewidth}px;
+        
+      `
+      let liners=document.createElement("span")
+        liners.style.cssText=`
+           display:flex;width:100%;height:${strokewidth}px;
+           background:${background?background:"rgba(0,0,0,0.1)"};
+           border-radius:${roundrange};
+           box-shadow:inset 3px 5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(0,boxshadow.lastIndexOf(" ")):'0'}),
+              inset -3px -5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(0,boxshadow.lastIndexOf(" ")):'0'});border-radius:50px
+        `
+      
+     if(linerchartrange){
+        for(let i=0;i<linerchartrange.length;i++){
+          let linerange=document.createElement("span")
+             let linetitle=document.createElement("span")
+               linetitle.innerHTML=`<span style='font-size:13px;font-weight:600'>${linerchartrange[i]}</span>
+               <span style="display:block;font-size:10px;font-weight:700;color:rgb(140,140,140)">${lineprop[i].length>8?lineprop[i].substring(0,7)+"..":lineprop[i]}</span>
+               `
+                 linetitle.style.cssText=`
+                   position:absolute;width:60px;background:rgb(240,240,240);
+                   display:block;top:100%;padding:0.8em 0.2em 0.4em 0.2em;line-height:16px;
+                   left:calc(50% - 30px);text-align:center;transform:scale(0);
+                   transform-origin:0 0;transition:0.3s;border-radius:5px;
+                   clip-path: polygon(0 20%, 25% 20%, 50% 0, 69% 20%, 100% 20%, 100% 100%, 0 100%);
+                 `
+            linerange.style.cssText=`
+              width:${linerchartrange[i]}%;height:${strokewidth}px;
+              background:${linerchartcolor[i]};display:inline-block;
+              position:relative;box-shadow:inset 3px 5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(boxshadow.lastIndexOf(" "),boxshadow.length):'0'}),
+              inset -3px -5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(boxshadow.lastIndexOf(" "),boxshadow.length):'0'});border-radius:${roundrange}
+            `
+            linerange.appendChild(linetitle)
+            liners.appendChild(linerange)
+        
+            linerange.onmouseover=function(){
+              linetitle.style.cssText=`${linetitle.style.cssText};transform:scale(1)`
+            }
+            linerange.onmouseleave=function(){
+              linetitle.style.cssText=`${linetitle.style.cssText};transform:scale(0)`
+            }
+        }
+      }
+     moduleClicklinechart.appendChild(liners)
+  }
+
+},
 }

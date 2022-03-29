@@ -436,7 +436,8 @@
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em>
 
-            <em>   let points=new range.point({
+            <em>  
+              let points=new range.point({
               id:"point-div",
               pointcount:5,
               background:"navy",
@@ -445,7 +446,21 @@
               activecolor:"white",
               fontsize:14,
               pointtextlabel:'number',
-              disabledcolor:"rgba(70,70,70,0.3)",
+              disabledcolor:"rgba(70,70,70,0.35)",
+              titles:["Account","BVN","Contact","Verified","Active"]
+              })
+               
+           <em class="text-gray"> //code for point 2</em>
+              let points2=new range.point({
+              id:"point-div2",
+              pointcount:5,
+              background:"navy",
+              fillpoint:3,
+              pointwidth:35,
+              activecolor:"white",
+              fontsize:14,
+              pointtextlabel:'checked',
+              disabledcolor:"rgba(70,70,70,0.35)",
               titles:["Account","BVN","Contact","Verified","Active"]
               })
             </em>
@@ -456,8 +471,10 @@
     <!-- end for the display of working codes -->
 
 <!-- code below is for the range output -->
-     <div class="col-md-8 range-container">
-      <div id="point-div"> 
+     <div class="col-md-8 range-container" style="flex-wrap: wrap;height:300px">
+      <div id="point-div" > 
+        </div>
+        <div id="point-div2"> 
         </div>
    </div>
 <!--end of code for the range output -->
@@ -487,28 +504,31 @@
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em>
 
-            <em>   let circle9=new range.semicircle({
-              id:"circle9-div",
-              width:180,
-            strokewidth:5,
-            percent:75,
-            rounded:false,
-            fontsize:18,
-            color:"navy",
-            textcolor:"navy",
-            textbold:500,
-            track:true,
-            extratext:"Uprise in Bitcoin",
-            indicator:true,
-            animate:false,
-            trackcolor:"",
-            widetrack:true,
-            trackfit:true,
-            unit:"%",
-            widestroke:true,
-            breakcolor:"white",
-            dashtrack:"2 3"
-            })
+            <em>  
+              let circle9=new range.semicircle({
+                id:"circle9-div",
+                width:180,
+              strokewidth:5,
+              percent:75,
+              rounded:false,
+              fontsize:18,
+              color:"navy",
+              textcolor:"navy",
+              textbold:500,
+              track:true,
+              extratext:"Uprise of Bitcoin in present nigeria situation",
+              extratextcolor:'rgb(160,160,160)',
+              indicator:true,
+              animate:false,
+              trackcolor:"",
+              widetrack:true,
+              trackfit:true,
+              unit:"%",
+              widestroke:true,
+              breakcolor:"white",
+              dashtrack:"2 3"
+              })
+            
             </em>
         </code>
       </pre>
@@ -579,6 +599,78 @@
 
 
 
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="line-chart"&gt; &lt;/div&gt;
+          </em>
+          <em class="top-code"> &lt;div id="line-chart2"&gt; &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em>
+
+            <em>  let linechart=new range.linechart({
+              id:"line-chart",
+              linerchartrange:[40,20,20,10],
+              strokewidth:12,
+              width:"90%",
+              boxshadow:"0.1 0.2",
+              roundrange:"50px",
+              linerchartcolor:["linear-gradient(60deg,red,orange)","linear-gradient(60deg,navy,blue)","aqua","linear-gradient(60deg,green,lightgreen)"],
+              lineprop:["JANUARY","FEBUARY","MARCH","APRIL"],
+            })
+
+           <em class="text-gray"> //code for line-chart2 </em>
+            let linechart2=new range.linechart({
+              id:"line-chart2",
+              linerchartrange:[40,20,20,10],
+              width:"90%",
+              boxshadow:"0 0",
+              roundrange:"0",
+              strokewidth:15,
+              linerchartcolor:["linear-gradient(60deg,red,orange)","linear-gradient(60deg,navy,blue)","aqua","linear-gradient(60deg,green,lightgreen)"],
+              lineprop:["JANUARY","FEBUARY","MARCH","APRIL"],
+            })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 " style="width:100%;display:flex;justify-content: center;align-items: center;flex-wrap: wrap;">
+      <div id="line-chart"> 
+        </div>
+        <div id="line-chart2"> 
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
  </section>
 
 
@@ -628,7 +720,7 @@
   textbold:500,
   track:true,
   extratext:"Uprise of Bitcoin in present nigeria situation",
-  extratextcolor:'rgb(200,200,200)',
+  extratextcolor:'rgb(160,160,160)',
   indicator:true,
   animate:false,
   trackcolor:"",
@@ -720,6 +812,19 @@
   titles:["Account","BVN","Contact","Verified","Active"]
   })
    
+//code for point 2
+  let points2=new range.point({
+  id:"point-div2",
+  pointcount:5,
+  background:"navy",
+  fillpoint:3,
+  pointwidth:35,
+  activecolor:"white",
+  fontsize:14,
+  pointtextlabel:'checked',
+  disabledcolor:"rgba(70,70,70,0.35)",
+  titles:["Account","BVN","Contact","Verified","Active"]
+  })
 
   let piechart=new range.piechart({
     id:"pie-chart",
@@ -733,7 +838,27 @@
   })
 
 
- 
+  let linechart=new range.linechart({
+    id:"line-chart",
+    linerchartrange:[40,20,20,10],
+    strokewidth:12,
+    width:"90%",
+    boxshadow:"0.1 0.2",
+    roundrange:"50px",
+    linerchartcolor:["linear-gradient(60deg,red,orange)","linear-gradient(60deg,navy,blue)","aqua","linear-gradient(60deg,green,lightgreen)"],
+    lineprop:["JANUARY","FEBUARY","MARCH","APRIL"],
+  })
+  //code for line-chart2
+  let linechart2=new range.linechart({
+    id:"line-chart2",
+    linerchartrange:[40,20,20,10],
+    width:"90%",
+    boxshadow:"0 0",
+    roundrange:"0",
+    strokewidth:15,
+    linerchartcolor:["linear-gradient(60deg,red,orange)","linear-gradient(60deg,navy,blue)","aqua","linear-gradient(60deg,green,lightgreen)"],
+    lineprop:["JANUARY","FEBUARY","MARCH","APRIL"],
+  })
    </script>
    </body>
    </html>
