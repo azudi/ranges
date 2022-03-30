@@ -1503,7 +1503,7 @@ const range = {
     if(moduleClickPie.getBoundingClientRect().right<180){
        textdiv.style.cssText=`${textdiv.style.cssText};left:-140px;top:${strokewidth/2}px`
     } 
- moduleClickPie.style.cssText=`width:${width}px;height:${width}px`
+ moduleClickPie.style.cssText=`width:${width}px;height:${width}px;position:relative`
 
   }
  
