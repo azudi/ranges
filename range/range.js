@@ -291,6 +291,7 @@ const range = {
     gradient,
     dashtrack,
     extratext,
+    extratextcolor,
   }) {
     //code for error
     if (percent > 100) {
@@ -363,17 +364,18 @@ const range = {
     extratextadd.style.cssText = `position:absolute;top:calc(50% + ${
       fontsize/2
     }px);
-    left:0;
+    left:15%;
     text-align:center;
     display:block;
-    width:100%;text-align:center;
+    padding-top:0.2em;
+    width:70%;text-align:center;
     height:${fontsize}px;
     display:${indicator == true ? "inline-flex" : "none"};
     justify-content:center;
-    align-items:center;
+    align-items:center;line-height:14px;
     font-weight:${textbold ? textbold : 300};
-    color:${textcolor ? textcolor : "black"};
-    font-size:${fontsize/2}px;
+    color:${extratextcolor ? extratextcolor : textcolor};
+    font-size:${fontsize/3}px;
     `; //end of code to show the percent in number
       extratextadd.innerHTML=extratext
     moduleClick.appendChild(extratextadd)
@@ -1415,7 +1417,7 @@ const range = {
     svgPie.style.cssText = `width:${width}px;
     height:${width}px;z-index:${pierange.length-p};
     position:absolute;top:0;left:0;`;
-      moduleClickPie.onmouseover=function(){
+      moduleClickPie.onmouseenter=function(){
           textdiv.style.transform="scale(1)"
       }
       moduleClickPie.onmouseleave=function(){
@@ -1481,7 +1483,7 @@ const range = {
     for(let i=0;i<pierange.length;i++){
        let contain=document.createElement("span");
          contain.style.cssText=`
-           display:flex;width:150px;background:transparent;border-radius:5px;
+           display:flex;width:140px;background:transparent;border-radius:5px;
            margin:0.1em;padding:0.2em 0.1em;justify-content:center;
            align-items:center;box-shadow:1px 2px 3px rgba(0,0,0,0.07),
            -1px -2px 3px rgba(0,0,0,0.07);
@@ -1490,7 +1492,7 @@ const range = {
            contain.innerHTML=`
              <span style='display:inline-block;border-radius:3px;width:10%;height:20px;padding-left:3px;background:${piecolor[i]}'></span>
                <span style='display:inline-block;width:70%;background:;padding:0 0.2em;font-weight:600;
-               font-size:12.5px;color:rgba(0,0,0,0.5)'>${stroketitle[i].length>13?stroketitle[i].substring(0,12)+"..":stroketitle[i]}</span>
+               font-size:12px;color:rgba(0,0,0,0.5)'>${stroketitle[i].length>13?stroketitle[i].substring(0,12)+"..":stroketitle[i]}</span>
              <span style='display:inline-block;width:20%;font-size:13px;font-weight:600;text-align:right;padding-right:0.2em'>${pierange[i]}</span>
            `
 
@@ -1559,7 +1561,7 @@ linechart: function ({
             linerange.appendChild(linetitle)
             liners.appendChild(linerange)
         
-            linerange.onmouseover=function(){
+            linerange.onmouseenter=function(){
               linetitle.style.cssText=`${linetitle.style.cssText};transform:scale(1)`
             }
             linerange.onmouseleave=function(){
