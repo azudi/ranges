@@ -1550,7 +1550,7 @@ linechart: function ({
     const moduleClicklinechart = document.getElementById(id);
       moduleClicklinechart.style.cssText=`
         width:${width};height:${strokewidth}px;
-        
+       border-radius:${roundrange} 
       `
       let liners=document.createElement("span")
         liners.style.cssText=`
@@ -1558,7 +1558,7 @@ linechart: function ({
            background:${background?background:"rgba(0,0,0,0.1)"};
            border-radius:${roundrange};
            box-shadow:inset 3px 5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(0,boxshadow.lastIndexOf(" ")):'0'}),
-              inset -3px -5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(0,boxshadow.lastIndexOf(" ")):'0'});border-radius:50px
+              inset -3px -5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(0,boxshadow.lastIndexOf(" ")):'0'});
         `
       
      if(linerchartrange){
