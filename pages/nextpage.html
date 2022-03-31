@@ -148,31 +148,35 @@
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em> 
             <em> 
-              let people6=new range.circle({
-              id:"circle6-div",
-              width:180,
-              strokewidth:15,
-              percent:80,
-              rounded:false,
-              fontsize:33,
-              color:"navy",
-              textcolor:"navy",
-              textbold:100,
-              track:true,
-              indicator:true,
-              animate:false,
-              trackcolor:"",
-              widetrack:false,
-              trackfit:true,
-              dashed:true,
-              dashtrack:"2 3",
-              unit:"%",
-              extratext:"Total members to be added on campus",
-              extratextcolor:"rgb(160,160,160)",
-              balltip:true,
-              breakcolor:"white"
-              //fillbackground:"transparent"
-              })
+              let circle6=new range.circle({
+                id:"circle6-div",
+                width:180,
+                strokewidth:15,
+                percent:80,
+                rounded:false,
+                fontsize:33,
+                color:"linear-gradient(-20deg,lightblue 0%,navy 100%)",
+                textcolor:"navy",
+                textbold:100,
+                track:true,
+                indicator:true,
+                animate:false,
+                trackcolor:"",
+                widetrack:false,
+                trackfit:true,
+                dashed:true,
+                dashtrack:"2 3",
+                unit:"%",
+                extratext:"Total members to be added on campus",
+                extratextcolor:"rgb(160,160,160)",
+                balltip:true,
+                breakcolor:"white",
+                gradient:{
+                      type:"radial-gradient",
+                      colors:["lightblue 0%","navy 100%"],
+                      orientation:{x:50,y:50,fill:100}
+                },
+                })
             </em>
         </code>
       </pre>
@@ -224,8 +228,8 @@
                 percent:43,
                 rounded:false,
                 fontsize:33,
-                color:"red",
-                textcolor:"red",
+                color:"rgb(67, 47, 245)",
+                textcolor:"navy",
                 textbold:100,
                 track:true,
                 indicator:true,
@@ -235,7 +239,12 @@
                 trackfit:true,
                 unit:"%",
                 arrowtip:true,
-                breakcolor:"white"
+                breakcolor:"white",
+                gradient:{
+                          type:"radial-gradient",
+                          colors:["lightblue 0%","navy 100%"],
+                          orientation:{x:50,y:50,fill:100}
+                       },
                 })
             </em>
             <em class="text-gray">
@@ -250,15 +259,15 @@
            
               let revolve=setInterval(() => {
                 if(!start){
-                  let people7=new range.circle({
+                  let circle7=new range.circle({
                     id:"circle7-div",
                     width:180,
                     strokewidth:15,
-                    percent:point++,
+                    percent:43,
                     rounded:false,
                     fontsize:33,
-                    color:"red",
-                    textcolor:"red",
+                    color:"rgb(67, 47, 245)",
+                    textcolor:"navy",
                     textbold:100,
                     track:true,
                     indicator:true,
@@ -268,8 +277,13 @@
                     trackfit:true,
                     unit:"%",
                     arrowtip:true,
-                    breakcolor:"white"
-                      })
+                    breakcolor:"white",
+                    gradient:{
+                              type:"radial-gradient",
+                              colors:["lightblue 0%","navy 100%"],
+                              orientation:{x:50,y:50,fill:100}
+                           },
+                    })
               }
               else{
                       clearInterval(revolve)
@@ -380,7 +394,7 @@
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em>
 
-            <em>  let people8=new range.circle({
+            <em> let circle8=new range.circle({
               id:"circle8-div",
                       width:180,
                       strokewidth:3,
@@ -397,8 +411,14 @@
                       widetrack:true,
                       trackfit:true,
                       unit:"%",
-                      breakcolor:"white"
+                      breakcolor:"white",
+                      gradient:{
+                        type:"radial-gradient",
+                        colors:["lightblue 0%","navy 100%"],
+                        orientation:{x:50,y:50,fill:100}
+                     },
               })
+            
             
             </em>
         </code>
@@ -442,10 +462,11 @@
            <em class="code-head"> // javascript code</em>
 
             <em>  
-              let points=new range.point({
+                        
+            let points=new range.point({
               id:"point-div",
               pointcount:5,
-              background:"navy",
+              background:"rgb(67, 47, 245)",
               fillpoint:3,
               pointwidth:35,
               activecolor:"white",
@@ -456,18 +477,16 @@
               })
                
            <em class="text-gray"> //code for point 2</em>
-              let points2=new range.point({
-              id:"point-div2",
-              pointcount:5,
-              background:"navy",
-              fillpoint:3,
-              pointwidth:35,
-              activecolor:"white",
-              fontsize:14,
-              pointtextlabel:'checked',
-              disabledcolor:"rgba(70,70,70,0.35)",
-              titles:["Account","BVN","Contact","Verified","Active"]
-              })
+            let linechart2=new range.linechart({
+              id:"line-chart2",
+              linerchartrange:[40,20,20,10],
+              width:"90%",
+              boxshadow:"0 0",
+              roundrange:"0px",
+              strokewidth:15,
+              linerchartcolor:["linear-gradient(60deg,red,orange)","linear-gradient(60deg,navy,blue)","aqua","linear-gradient(60deg,green,lightgreen)"],
+              lineprop:["JANUARY","FEBUARY","MARCH","APRIL"],
+            })
             </em>
         </code>
       </pre>
@@ -510,29 +529,36 @@
            <em class="code-head"> // javascript code</em>
 
             <em>  
-              let circle9=new range.semicircle({
-                id:"circle9-div",
-                width:180,
-              strokewidth:5,
-              percent:75,
-              rounded:false,
-              fontsize:18,
-              color:"navy",
-              textcolor:"navy",
-              textbold:500,
-              track:true,
-              extratext:"Uprise of Bitcoin in present nigeria situation",
-              extratextcolor:'rgb(160,160,160)',
-              indicator:true,
-              animate:false,
-              trackcolor:"",
-              widetrack:true,
-              trackfit:true,
-              unit:"%",
-              widestroke:true,
-              breakcolor:"white",
-              dashtrack:"2 3"
-              })
+                      
+            let circle9=new range.semicircle({
+              id:"circle9-div",
+              width:190,
+            strokewidth:15,
+            percent:79,
+            rounded:false,
+            fontsize:18,
+            color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
+            textcolor:"navy",
+            textbold:500,
+            track:true,
+            extratext:"Uprise of Bitcoin in present nigeria",
+            extratextcolor:'rgb(160,160,160)',
+            indicator:true,
+            animate:false,
+            trackcolor:"",
+            widetrack:true,
+            trackfit:true,
+            unit:"%",
+            balltip:true,
+            widestroke:true,
+            breakcolor:"white",
+            boxshadow:"0.1 0.2",
+            gradient:{
+                  type:"radial-gradient",
+                  colors:["lightblue 0%","navy 100%"],
+                  orientation:{x:50,y:50,fill:100}
+            },
+            })
             
             </em>
         </code>
@@ -696,7 +722,7 @@
   percent:80,
   rounded:false,
   fontsize:33,
-  color:"navy",
+  color:"linear-gradient(-20deg,lightblue 0%,navy 100%)",
   textcolor:"navy",
   textbold:100,
   track:true,
@@ -711,8 +737,12 @@
   extratext:"Total members to be added on campus",
   extratextcolor:"rgb(160,160,160)",
   balltip:true,
-  breakcolor:"white"
-  //fillbackground:"transparent"
+  breakcolor:"white",
+  gradient:{
+        type:"radial-gradient",
+        colors:["lightblue 0%","navy 100%"],
+        orientation:{x:50,y:50,fill:100}
+  },
   })
   
 
@@ -720,16 +750,16 @@
 
   let people9=new range.semicircle({
     id:"circle9-div",
-    width:180,
-  strokewidth:5,
-  percent:75,
+    width:190,
+  strokewidth:15,
+  percent:79,
   rounded:false,
   fontsize:18,
-  color:"navy",
+  color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
   textcolor:"navy",
   textbold:500,
   track:true,
-  extratext:"Uprise of Bitcoin in present nigeria situation",
+  extratext:"Uprise of Bitcoin in present nigeria",
   extratextcolor:'rgb(160,160,160)',
   indicator:true,
   animate:false,
@@ -737,9 +767,15 @@
   widetrack:true,
   trackfit:true,
   unit:"%",
+  balltip:true,
   widestroke:true,
   breakcolor:"white",
-  dashtrack:"2 3"
+  boxshadow:"0.1 0.2",
+  gradient:{
+        type:"radial-gradient",
+        colors:["lightblue 0%","navy 100%"],
+        orientation:{x:50,y:50,fill:100}
+  },
   })
 
 
@@ -761,7 +797,12 @@
           widetrack:true,
           trackfit:true,
           unit:"%",
-          breakcolor:"white"
+          breakcolor:"white",
+          gradient:{
+            type:"radial-gradient",
+            colors:["lightblue 0%","navy 100%"],
+            orientation:{x:50,y:50,fill:100}
+         },
   })
 
 
@@ -781,7 +822,7 @@
   percent:43,
   rounded:false,
   fontsize:33,
-  color:"navy",
+  color:"rgb(67, 47, 245)",
   textcolor:"navy",
   textbold:100,
   track:true,
@@ -792,7 +833,12 @@
   trackfit:true,
   unit:"%",
   arrowtip:true,
-  breakcolor:"white"
+  breakcolor:"white",
+  gradient:{
+            type:"radial-gradient",
+            colors:["lightblue 0%","navy 100%"],
+            orientation:{x:50,y:50,fill:100}
+         },
   })
 
   
@@ -812,7 +858,7 @@
   let points=new range.point({
   id:"point-div",
   pointcount:5,
-  background:"navy",
+  background:"rgb(67, 47, 245)",
   fillpoint:3,
   pointwidth:35,
   activecolor:"white",
@@ -826,7 +872,7 @@
   let points2=new range.point({
   id:"point-div2",
   pointcount:5,
-  background:"navy",
+  background:"rgb(67, 47, 245)",
   fillpoint:3,
   pointwidth:35,
   activecolor:"white",
@@ -844,7 +890,7 @@
     pierange:[40,20,20,10],
     strokepattern:[50,18,26,35],
     stroketitle:["New arrival","Depature","Gross outcome display","Intrest"],
-    strokepatternbackground:"white"
+    strokepatternbackground:"white",
   })
 
 

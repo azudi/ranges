@@ -731,7 +731,7 @@ const range = {
       rollerIndicatorSemi.innerHTML = `${percent}${unit}`; //code to show the percent in number
       moduleClick.appendChild(rollerIndicatorSemi);
 
-      rollerIndicatorSemi.style.cssText = `position:absolute;top:calc(50% - ${
+      rollerIndicatorSemi.style.cssText = `position:absolute;top:calc(25% - ${
         fontsize / 2
       }px);
    left:calc(50% - ${fontsize / 2}px);
@@ -748,7 +748,7 @@ const range = {
      
     if(extratext){
       extratextaddSemi.classList.add("extratext_div");
-      extratextaddSemi.style.cssText = `position:absolute;top:calc(50% + ${
+      extratextaddSemi.style.cssText = `position:absolute;top:calc(25% + ${
         fontsize/2
       }px);
         left:${strokewidth*4}px;
@@ -860,7 +860,7 @@ const range = {
              border-radius:50%;
              display:block;
              z-index:100;
-             transform:rotateZ(${(percent / 100) * 360}deg)  
+             transform:rotateZ(${((percent / 100) * 180)-90}deg)  
            `;
           tip.style.cssText = `
              position:absolute;top:0.5px;
@@ -885,7 +885,7 @@ const range = {
           border-radius:50%;
           display:block;
           z-index:100;
-          transform:rotateZ(${(percent / 100) * 360}deg)  
+          transform:rotateZ(${((percent / 100) * 180)-90}deg)  
         `;
           tip.style.cssText = `
           position:absolute;top:${-strokewidth}px;
@@ -1027,8 +1027,9 @@ const range = {
         ${moduleClickChild.style.cssText};transform:rotateZ(-178deg)
         `
         moduleClick.style.cssText=`
-        ${moduleClick.style.cssText};height:${(width/2)-1}px;overflow-y:hidden;
+        ${moduleClick.style.cssText};height:${(width)-1}px;overflow-y:hidden;
         overflow-x:hidden;
+        clip-path: polygon(50% 0%, 100% 0, 100% 50%, 68% 50%, 23% 50%, 0 50%, 0 0);
         `
         
     }

@@ -2,6 +2,7 @@
 
 .rx_liner{
     animation:2.5s infinite linear roller-animate;
+ 
 }
 @keyframes roller-animate{
  0%{transform:translateX(-50%) scaleX(0.01);
