@@ -1483,7 +1483,7 @@
       for(let i=0;i<pierange.length;i++){
          let contain=document.createElement("span");
            contain.style.cssText=`
-             display:flex;width:140px;background:transparent;border-radius:5px;
+             display:flex;width:138px;background:transparent;border-radius:5px;
              margin:0.1em;padding:0.2em 0.1em;justify-content:center;
              align-items:center;box-shadow:1px 2px 3px rgba(0,0,0,0.07),
              -1px -2px 3px rgba(0,0,0,0.07);
@@ -1500,9 +1500,32 @@
       }
   
    moduleClickPie.appendChild(textdiv)
-      if(moduleClickPie.getBoundingClientRect().right<180){
-         textdiv.style.cssText=`${textdiv.style.cssText};left:-140px;top:${strokewidth/2}px`
+      if(textdiv.getBoundingClientRect().right<140+textdiv.clientWidth){
+        textdiv.style.cssText=`${textdiv.style.cssText};left:-120px;top:${strokewidth/2}px`
       } 
+      else if(textdiv.getBoundingClientRect().right>140+textdiv.clientWidth){
+        textdiv.style.cssText=`${textdiv.style.cssText};left:${width-(strokewidth/3)}px;top:${strokewidth/2}px`
+      }
+      if(textdiv.getBoundingClientRect().left<140){
+        textdiv.style.cssText=`${textdiv.style.cssText};left:${0}px;top:${width-(strokewidth/3)}px`
+      }
+       
+  
+    window.onresize=function(){
+      console.log(textdiv.getBoundingClientRect().left)
+       if(textdiv.getBoundingClientRect().right<140+textdiv.clientWidth){
+        textdiv.style.cssText=`${textdiv.style.cssText};left:-120px;top:${strokewidth/2}px`
+      } 
+      else if(textdiv.getBoundingClientRect().right>140+textdiv.clientWidth){
+        textdiv.style.cssText=`${textdiv.style.cssText};left:${width-(strokewidth/3)}px;top:${strokewidth/2}px`
+      }
+      if(textdiv.getBoundingClientRect().left<140){
+        textdiv.style.cssText=`${textdiv.style.cssText};left:${0}px;top:${width-(strokewidth/3)}px`
+      } 
+  
+    }
+   
+   
    moduleClickPie.style.cssText=`width:${width}px;height:${width}px;position:relative`
   
     }
@@ -1535,7 +1558,7 @@
              background:${background?background:"rgba(0,0,0,0.1)"};
              border-radius:${roundrange};
              box-shadow:inset 3px 5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(0,boxshadow.lastIndexOf(" ")):'0'}),
-                inset -3px -5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(0,boxshadow.lastIndexOf(" ")):'0'});border-radius:50px
+                inset -3px -5px 6px rgba(0,0,0,${boxshadow?boxshadow.substring(0,boxshadow.lastIndexOf(" ")):'0'});
           `
         
        if(linerchartrange){
@@ -1549,7 +1572,7 @@
                      position:absolute;width:60px;background:rgb(240,240,240);
                      display:block;top:100%;padding:0.8em 0.2em 0.4em 0.2em;line-height:16px;
                      left:calc(50% - 30px);text-align:center;transform:scale(0);
-                     transform-origin:0 0;transition:0.3s;border-radius:5px;
+                     transform-origin:0 0;transition:0.3s;
                      clip-path: polygon(0 20%, 25% 20%, 50% 0, 69% 20%, 100% 20%, 100% 100%, 0 100%);
                    `
               linerange.style.cssText=`
