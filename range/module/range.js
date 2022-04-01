@@ -492,30 +492,32 @@
           } //end of code for balltip
   
   
-          //code below for arrowtip
-  
-          if (arrowtip && arrowtip == true) {
-            let ball = document.createElement("span");
-            let tip = document.createElement("span");
-            ball.style.cssText = `
-            position:absolute;top:0;left:0;
-            width:100%;height:100%;
-            border-radius:50%;
-            display:block;
-            z-index:100;
-            transform:rotateZ(${(percent / 100) * 360}deg)  
-          `;
-            tip.style.cssText = `
-            position:absolute;top:${-strokewidth}px;
-            left:50%;
-           border-left:${strokewidth * 2}px solid ${color};
-           border-top:${strokewidth * 2}px solid transparent;
-           border-bottom:${strokewidth * 2}px solid transparent;
-           border-radius:50px
-          `;
-            ball.appendChild(tip);
-            moduleClick.appendChild(ball);
-          } //end of code for arrowtip
+                     //code below for arrowtip
+        
+                     if (arrowtip && arrowtip == true) {
+                      let ballbox = document.createElement("span");
+                      let tipbox = document.createElement("span");
+                      ballbox.style.cssText = `
+                      position:absolute;top:0;left:0;
+                      width:100%;height:100%;
+                      border-radius:50%;
+                      display:block;
+                      transform:rotateZ(${(percent / 100) * 360}deg) 
+                    `;
+                      tipbox.style.cssText = `
+                      position:absolute;top:${-strokewidth/2}px;
+                      left:calc(50% + 2px);width:${strokewidth*3}px;
+                      height:${strokewidth*3}px;
+                      display:inline-block;
+                    background:${color};
+                    clip-path:polygon(0 0, 0 100%, 60% 50%);
+                  border-radius:50px
+                    `;
+                      ballbox.appendChild(tipbox);
+                      moduleClick.appendChild(ballbox);
+                    } //end of code for arrowtip
+              //end of code for arrowtip
+          
   
      
   
@@ -876,30 +878,31 @@
           } //end of code for balltip
   
   
-          //code below for arrowtip
-  
-          if (arrowtip && arrowtip == true) {
-            let ball = document.createElement("span");
-            let tip = document.createElement("span");
-            ball.style.cssText = `
-            position:absolute;top:0;left:0;
-            width:100%;height:100%;
-            border-radius:50%;
-            display:block;
-            z-index:100;
-            transform:rotateZ(${((percent / 100) * 180)-90}deg)  
-          `;
-            tip.style.cssText = `
-            position:absolute;top:${-strokewidth}px;
-            left:50%;
-           border-left:${strokewidth * 2}px solid ${color};
-           border-top:${strokewidth * 2}px solid transparent;
-           border-bottom:${strokewidth * 2}px solid transparent;
-           border-radius:50px
-          `;
-            ball.appendChild(tip);
-            moduleClick.appendChild(ball);
-          } //end of code for arrowtip
+            //code below for arrowtip
+        
+            if (arrowtip && arrowtip == true) {
+              let ballbox = document.createElement("span");
+              let tipbox = document.createElement("span");
+              ballbox.style.cssText = `
+              position:absolute;top:0;left:0;
+              width:100%;height:100%;
+              border-radius:50%;
+              display:block;
+              transform:rotateZ(${((percent / 100) * 180)-90}deg)  
+            `;
+              tipbox.style.cssText = `
+              position:absolute;top:${-strokewidth/2}px;
+              left:calc(50% + 2px);width:${strokewidth*3}px;
+              height:${strokewidth*3}px;
+              display:inline-block;
+            background:${color};
+            clip-path:polygon(0 0, 0 100%, 60% 50%);
+          border-radius:50px
+            `;
+              ballbox.appendChild(tipbox);
+              moduleClick.appendChild(ballbox);
+            } //end of code for arrowtip
+      //end of code for arrowtip
   
      
   
