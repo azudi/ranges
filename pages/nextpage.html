@@ -529,36 +529,37 @@
            <em class="code-head"> // javascript code</em>
 
             <em>  
-                      
-            let circle9=new range.semicircle({
-              id:"circle9-div",
-              width:190,
-            strokewidth:15,
-            percent:79,
-            rounded:false,
-            fontsize:18,
-            color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
-            textcolor:"navy",
-            textbold:500,
-            track:true,
-            extratext:"Uprise of Bitcoin in present nigeria",
-            extratextcolor:'rgb(160,160,160)',
-            indicator:true,
-            animate:false,
-            trackcolor:"",
-            widetrack:true,
-            trackfit:true,
-            unit:"%",
-            balltip:true,
-            widestroke:true,
-            breakcolor:"white",
-            boxshadow:"0.1 0.2",
-            gradient:{
-                  type:"radial-gradient",
-                  colors:["lightblue 0%","navy 100%"],
-                  orientation:{x:50,y:50,fill:100}
-            },
-            })
+               <em class="text-gray"> //  Note using arrowtip/balltip the stroke width must be greater than 4% the width </em>   
+              
+               let people9=new range.semicircle({
+                id:"circle9-div",
+                width:190,
+              strokewidth:15,
+              percent:79,
+              rounded:false,
+              fontsize:18,
+              color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
+              textcolor:"navy",
+              textbold:500,
+              track:true,
+              extratext:"Uprise of Bitcoin in present nigeria",
+              extratextcolor:'rgb(160,160,160)',
+              indicator:true,
+              animate:false,
+              trackcolor:"",
+              widetrack:true,
+              trackfit:true,
+              unit:"%",
+              arrowtip:true,
+              widestroke:true,
+              breakcolor:"white",
+              boxshadow:"0.1 0.2",
+              gradient:{
+                    type:"radial-gradient",
+                    colors:["lightblue 0%","navy 100%"],
+                    orientation:{x:50,y:50,fill:100}
+              },
+              })
             
             </em>
         </code>
@@ -570,6 +571,84 @@
 <!-- code below is for the range output -->
      <div class="col-md-5 range-container">
       <div id="circle9-div"> 
+        <svg>
+        <circle/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="circle9-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em>
+
+            <em>  
+               <em class="text-gray"> //  Note using arrowtip/balltip the stroke width must be greater than 4% the width </em>   
+              
+               let people9=new range.semicircle({
+                id:"circle9-div",
+                width:190,
+              strokewidth:15,
+              percent:79,
+              rounded:false,
+              fontsize:18,
+              color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
+              textcolor:"navy",
+              textbold:500,
+              track:true,
+              extratext:"Uprise of Bitcoin in present nigeria",
+              extratextcolor:'rgb(160,160,160)',
+              indicator:true,
+              animate:false,
+              trackcolor:"",
+              widetrack:true,
+              trackfit:true,
+              unit:"%",
+              arrowtip:true,
+              widestroke:true,
+              breakcolor:"white",
+              boxshadow:"0.1 0.2",
+              gradient:{
+                    type:"radial-gradient",
+                    colors:["lightblue 0%","navy 100%"],
+                    orientation:{x:50,y:50,fill:100}
+              },
+              })
+            
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="circle10-div"> 
         <svg>
         <circle/>
         </svg>
@@ -751,7 +830,7 @@
   let people9=new range.semicircle({
     id:"circle9-div",
     width:190,
-  strokewidth:15,
+  strokewidth:10,
   percent:79,
   rounded:false,
   fontsize:18,
@@ -770,7 +849,7 @@
   arrowtip:true,
   widestroke:true,
   breakcolor:"white",
-  boxshadow:"0.1 0.2",
+  boxshadow:"0.06 0.1",
   gradient:{
         type:"radial-gradient",
         colors:["lightblue 0%","navy 100%"],
@@ -778,6 +857,38 @@
   },
   })
 
+
+
+  
+  let people10=new range.semicircle({
+    id:"circle10-div",
+    width:190,
+  strokewidth:5,
+  percent:41,
+  rounded:false,
+  fontsize:20,
+  color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
+  textcolor:"navy",
+  textbold:600,
+  track:true,
+  extratext:"Uprise of Nothern Temperature",
+  extratextcolor:'rgb(160,160,160)',
+  indicator:true,
+  trackcolor:"",
+  widetrack:true,
+  trackfit:true,
+  unit:"&deg;",
+  widestroke:true,
+  breakcolor:"white",
+  boxshadow:"0.06 0.1",
+  dashed:true,
+  dashtrack:"1.5 3",
+  gradient:{
+        type:"radial-gradient",
+        colors:["lightblue 0%","navy 100%"],
+        orientation:{x:50,y:50,fill:100}
+  },
+  })
 
   
   let people8=new range.circle({
@@ -940,3 +1051,33 @@
    </script>
    </body>
    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
