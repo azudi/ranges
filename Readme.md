@@ -1,7 +1,7 @@
 # range.js
 ===========
 
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.5.1&x2=0)]()
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.5.2&x2=0)]()
 
 
 It is a light weight library, which provides well customizable svg progress-range. The library does **not require any rendering from the server**, as the whole svg is created on the **client's browser**. However, as it is heavily dependent on the browser.
@@ -136,7 +136,8 @@ let people=new range.circle({
 
    // NOTE: THE BALLTIP AND ARROWTIP SHOULD NOT BE USE TOGETHER TO AVOID MERGING ERRORS
    // NOTE: FOR SHORT PERCENT UPDATE AVOID THE USE OF PROPERTY WITH INTENSE GRAPHIC EXAMPLE(box-shadow;arrowtip,balltip,lineargradient)
-   // AVAOID THE USE OF PIECHART FOR SHORT PIERANGE CHANGES
+   // AVOID THE USE OF PIECHART FOR SHORT PIERANGE CHANGES
+   //NOTE THAT WHILE USING ARROWTIP OR BALLTIP THE STROKEWIDTH IS SET TO 0.045% THE WIDTH, FOR BEST UI DISPLAY 
 }
 ```
 

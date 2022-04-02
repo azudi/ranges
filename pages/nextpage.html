@@ -677,15 +677,14 @@
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em>
 
-            <em>  let piechart=new range.piechart({
+            <em> let piechart=new range.piechart({
               id:"pie-chart",
               width:200,
-              strokewidth:40,
+              strokewidth:65,
               piecolor:["teal","orange","aqua","lightgreen"],
               pierange:[40,20,20,10],
-              strokepattern:[50,18,26,35],
-              stroketitle:["Money arrival","Depature","Gross outcome display","Intrest"],
-              strokepatternbackground:"white"
+              stroketitle:["New arrival","Depature","Gross outcome display","Intrest"],
+              strokepatternbackground:"white",
             })
             </em>
         </code>
@@ -704,6 +703,51 @@
        <!--end of range container -->
 </div>
 
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="pie-chart"&gt; &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em>
+
+            <em>   let piechart2=new range.piechart({
+              id:"pie-chart2",
+              width:200,
+              strokewidth:55,
+              piecolor:["teal","orange","aqua","lightgreen"],
+              pierange:[30,30,20,10],
+             strokepattern:[40,18,26,35],
+              stroketitle:["Profit","Expenditure","Capital","Losses"],
+              strokepatternbackground:"white",
+            })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 " style="width:300px;display:flex;justify-content: center;align-items: center;">
+        <div id="pie-chart2"> 
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
 
 
 
@@ -797,9 +841,9 @@
   id:"circle6-div",
   width:180,
   strokewidth:15,
-  percent:80,
+  percent:73,
   rounded:false,
-  fontsize:33,
+  fontsize:30,
   color:"linear-gradient(-20deg,lightblue 0%,navy 100%)",
   textcolor:"navy",
   textbold:100,
@@ -830,7 +874,7 @@
     id:"circle9-div",
     width:190,
   strokewidth:10,
-  percent:79,
+  percent:67,
   rounded:false,
   fontsize:18,
   color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
@@ -995,14 +1039,22 @@
   let piechart=new range.piechart({
     id:"pie-chart",
     width:200,
-    strokewidth:40,
+    strokewidth:65,
     piecolor:["teal","orange","aqua","lightgreen"],
     pierange:[40,20,20,10],
-    strokepattern:[50,18,26,35],
     stroketitle:["New arrival","Depature","Gross outcome display","Intrest"],
     strokepatternbackground:"white",
   })
-
+           let piechart2=new range.piechart({
+              id:"pie-chart2",
+              width:200,
+              strokewidth:55,
+              piecolor:["teal","orange","aqua","lightgreen"],
+              pierange:[30,30,20,10],
+             strokepattern:[40,18,26,35],
+              stroketitle:["Profit","Expenditure","Capital","Losses"],
+              strokepatternbackground:"white",
+            })
 
   let linechart=new range.linechart({
     id:"line-chart",

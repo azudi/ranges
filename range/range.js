@@ -308,6 +308,7 @@ const range = {
       color ? (color = color) : (color = "black");
       trackfit ? (track = false) : (track = track);
       dashed ? (track = false) : (track = track);
+      balltip || arrowtip ? strokewidth<width*0.04?strokewidth=width*0.04:strokewidth=strokewidth : (strokewidth = strokewidth);
       let rangevalue=5.8;
       widestroke?rangevalue=(rangevalue*0.99):rangevalue=5.8
 
@@ -685,7 +686,7 @@ const range = {
     }
 
     if (document.getElementById(id)) {
-     
+
       const moduleClick = document.getElementById(id);
       const moduleClickChild = moduleClick.children[0];
       const moduleClickChildNext = moduleClick.children[0].children[0];
@@ -695,6 +696,7 @@ const range = {
       color ? (color = color) : (color = "black");
       trackfit ? (track = false) : (track = track);
       dashed ? (track = false) : (track = track);
+      balltip || arrowtip ? strokewidth<width*0.04?strokewidth=width*0.045:strokewidth=strokewidth : (strokewidth = strokewidth);
       let rangevalue=5.8;
       widestroke?rangevalue=(rangevalue*0.99):rangevalue=5.8
 
@@ -1397,16 +1399,20 @@ const range = {
        else if(strokewidth>=(width*.2) && strokewidth<(width*.25)){
         ratio=0.79-((strokewidth-1)/width)
       }
-      else if(strokewidth>=(width*.25) && strokewidth<(width*.3)){
+      else if(strokewidth>=(width*.25) && strokewidth<=(width*.3)){
         ratio=0.73-((strokewidth-2)/width)
       }
-      else if(strokewidth>=(width*.3) && strokewidth<(width*.35)){
-        ratio=0.67-((strokewidth-3)/width)
+      else if(strokewidth>(width*.3) && strokewidth<(width*.35)){
+        ratio=0.69-((strokewidth-3)/width)
       }
-      else if(strokewidth>=(width*.45)){
-        console.log("you have exceeeded to the negative value and not accepted. iNPUT A VALUE LESS THAN O.4% OF THE WIDTH")
+      else if(strokewidth>=(width*.35) && strokewidth<(width*.36)){
+        ratio=0.64-((strokewidth-3)/width)
+        console.log("you have exceeeded to the negative value and not accepted. iNPUT A VALUE LESS THAN O.35% OF THE WIDTH")
       }
-      
+      else if(strokewidth>=(width*.36)){
+        ratio=0
+        console.log("you have exceeeded to the negative value and not accepted. iNPUT A VALUE LESS THAN O.35% OF THE WIDTH")
+      }
       let patternwidth
         if(strokepattern){
            patternwidth = strokepattern[p]>strokewidth?strokewidth:strokepattern[p]
@@ -1530,7 +1536,7 @@ const range = {
   }
  
  
- moduleClickPie.style.cssText=`width:${width}px;height:${width}px;position:relative`
+ moduleClickPie.style.cssText=`width:${width}px;height:${width}px;position:relative !important`
 
   }
  
