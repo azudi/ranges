@@ -1427,16 +1427,7 @@ const range = {
     svgPie.style.cssText = `width:${width}px;
     height:${width}px;z-index:${pierange.length-p};
     position:absolute;top:0;left:0;`;
-      moduleClickPie.onmouseenter=function(){
-          textdiv.style.transform="scale(1)"
-      }
-      moduleClickPie.onmouseleave=function(){
-        setTimeout(()=>{
-          textdiv.style.transform="scale(0)"
-        },500)
-    
-    }
-
+     
 
           svgPie.innerHTML = `
 
@@ -1510,31 +1501,28 @@ const range = {
     }
 
  moduleClickPie.appendChild(textdiv)
-    if(textdiv.getBoundingClientRect().right<140+textdiv.clientWidth){
-      textdiv.style.cssText=`${textdiv.style.cssText};left:-120px;top:${strokewidth/2}px`
-    } 
-    else if(textdiv.getBoundingClientRect().right>140+textdiv.clientWidth){
-      textdiv.style.cssText=`${textdiv.style.cssText};left:${width-(strokewidth/3)}px;top:${strokewidth/2}px`
+  
+        
+      moduleClickPie.onmouseenter=function(e){
+        textdiv.style.transform="scale(1)";
+         let x_cursor=e.clientX
+      let right_dist=e.target.parentElement.getBoundingClientRect().right-e.target.parentElement.clientWidth/2
+      textdiv.style.transform="scale(1)";
+   
+   if(x_cursor>right_dist){
+    textdiv.style.cssText=`${textdiv.style.cssText};left:${width-(strokewidth/3)}px;top:${strokewidth/2}px`
+   }
+   else if(x_cursor<right_dist){
+    textdiv.style.cssText=`${textdiv.style.cssText};left:-120px;top:${strokewidth/2}px`
+   }
+  
+      }
+    moduleClickPie.onmouseleave=function(){
+      setTimeout(()=>{
+        textdiv.style.transform="scale(0)"
+      },300)
     }
-    if(textdiv.getBoundingClientRect().left<140){
-      textdiv.style.cssText=`${textdiv.style.cssText};left:${0}px;top:${width-(strokewidth/3)}px`
-    }
-     
 
-  window.onresize=function(){
-    console.log(textdiv.getBoundingClientRect().left)
-     if(textdiv.getBoundingClientRect().right<140+textdiv.clientWidth){
-      textdiv.style.cssText=`${textdiv.style.cssText};left:-120px;top:${strokewidth/2}px`
-    } 
-    else if(textdiv.getBoundingClientRect().right>140+textdiv.clientWidth){
-      textdiv.style.cssText=`${textdiv.style.cssText};left:${width-(strokewidth/3)}px;top:${strokewidth/2}px`
-    }
-    if(textdiv.getBoundingClientRect().left<140){
-      textdiv.style.cssText=`${textdiv.style.cssText};left:${0}px;top:${width-(strokewidth/3)}px`
-    } 
-
-  }
- 
  
  moduleClickPie.style.cssText=`width:${width}px;height:${width}px;position:relative !important`
 
