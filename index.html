@@ -16,7 +16,14 @@
         color:inherit;text-decoration: none;
         font-family: 'Open Sans', sans-serif;
      }
-     
+     .note>span{
+          display: block;padding: 0.5em 1em;
+          opacity: 0.6;font-size: 13px;
+     }
+     .note{
+       padding: 0.5em;background: rgba(50,50,50,0.1);
+       margin-bottom: 1em;
+     }
      body{
        margin: 0;
        padding: 0;  
@@ -201,7 +208,7 @@
        <!-- end of code header -->
                      <em class="code-head"> // javascript code</em> 
                       <em>   let circle2=new range.circle({
-                        id:"circle-div",
+                        id:"circle2-div",
                         width:200,
                         strokewidth:15,
                         percent:65,
@@ -219,17 +226,19 @@
                       </em>
                       /*
                       <em class="text-gray">  these code below is not useful except want to 
-                         activate onclick function for stopwatch or timer ( customize clickeffect function )</em>
-                      */
+                         activate onclick function for stopwatch or timer ( customize clickeffect function )
+                     ** and note the setInterval can be use directly without the use of add eventlistener </em>
+                         */
                       
-                      <em class="text-gray">    let count=0;
+                      <em class="text-gray">    
+                        let count=0;
                         let condition=true;
                          document.querySelector("#circle2-div").addEventListener("click",function(){
                        
                           let interval=setInterval(() => {
                             if(!condition){
                               let people2=new range.circle({
-                                  id:"click2-div",
+                                  id:"circle2-div",
                                   width:180,
                                   strokewidth:15,
                                   percent:count++,
@@ -240,12 +249,9 @@
                                   textbold:100,
                                   track:true,
                                   indicator:true,
-                                  animate:false,
                                   trackcolor:"",
                                   trackfit:true,
-                                  //dashed:true,
                                   unit:"%",
-                                  //fillbackground:"transparent"
                                   })
                           }
                           else{
@@ -705,7 +711,16 @@
        <!--end of range container -->
 </div>
 
+   <div class="note">
 
+    
+   <span>// NOTE: THE BALLTIP AND ARROWTIP SHOULD NOT BE USE TOGETHER TO AVOID MERGING ERRORS</span>
+    <span>// NOTE: FOR SHORT PERCENT UPDATE AVOID THE USE OF PROPERTY WITH INTENSE GRAPHIC EXAMPLE(box-shadow;arrowtip,balltip,lineargradient)</span>
+      <span>// AVOID THE USE OF PIECHART FOR SHORT PIERANGE CHANGES</span>
+        <span> //NOTE THAT WHILE USING ARROWTIP OR BALLTIP THE STROKEWIDTH IS SET TO 0.045% THE WIDTH, FOR BEST UI DISPLAY</span>
+          <span>//NOTE THAT WHILE USING ARROWTIP OR BALLTIP IN QUATERCIRCLE AND SEMICIRCLE IS NOT TOTALLY COMPACTIBLE IN ALL WIDTH AND RANGES STILL UNDER DEVELOPMENT</span> 
+          <span>// FOR DYNAMIC UPDATE OF ANY OBJECT PERCENT PROPERTY VIEW CODE EXAMPLE <a href="https://github.com/azudi/ranges" style="color:navy">GITHUB-PAGE</a> </span>
+   </div>
 
 <div class="flex col-12"><button class="nextpage"><a href="pages/nextpage.html">Next page</a></button></div>
 

@@ -1,7 +1,7 @@
 # range.js
 ===========
 
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.5.3&x2=0)]()
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.6.0&x2=0)]()
 
 
 It is a light weight library, which provides well customizable svg progress-range. The library does **not require any rendering from the server**, as the whole svg is created on the **client's browser**. However, as it is heavily dependent on the browser.
@@ -48,6 +48,41 @@ let people=new range.circle({
   trackcolor:"",
   unit:"%",
   })
+
+  // Code below is to activate on clickevent listener to activate dynamic percent update. the code can be manipulated to desired use
+                     let count=0;
+                        let condition=true;
+                         document.querySelector("#circle-div").addEventListener("click",function(){
+                       
+                          let interval=setInterval(() => {
+                            if(!condition){
+                              let people=new range.circle({
+                                  id:"circle-div",
+                                  width:180,
+                                  strokewidth:15,
+                                  percent:count++,
+                                  rounded:false,
+                                  fontsize:33,
+                                  color:"red",
+                                  textcolor:"red",
+                                  textbold:100,
+                                  track:true,
+                                  indicator:true,
+                                  trackcolor:"",
+                                  trackfit:true,
+                                  unit:"%",
+                                  })
+                          }
+                          else{
+                                  clearInterval(interval)
+                                }
+                      
+                             }, 500);
+                       
+                           
+                             condition=!condition;
+                         })
+
   </script>
 </body>
 ```
@@ -100,7 +135,7 @@ let people=new range.circle({
     // ROLLER
     ratio:             2,      // to set the number of divisible stroke in a roller (--number)
 
-    //SEMICIRCLE AND CIRCLE
+    //SEMICIRCLE AND CIRCLE AND QUATERCIRCLE
     extratext:             "Uprise in Bitcoin",      // To add an extra text for description (--string)
     gradient:                object,                 // To set the backround gradient  (--object)
 
@@ -132,12 +167,13 @@ let people=new range.circle({
     strokewidth:                        40,      // To set the max-height of the pie strokes (--number)
     roundrange:
     lineprop:             ["january","Feduary","March","April"],  // The stroke title (not more than 7 characters)  (--oblect)
-    boxshadow:      "o.1 0.2",  // To set the background shadow of the stroke (--string)
+    boxshadow:      "0.1 0.2",  // To set the background shadow of the stroke (--string)
 
    // NOTE: THE BALLTIP AND ARROWTIP SHOULD NOT BE USE TOGETHER TO AVOID MERGING ERRORS
    // NOTE: FOR SHORT PERCENT UPDATE AVOID THE USE OF PROPERTY WITH INTENSE GRAPHIC EXAMPLE(box-shadow;arrowtip,balltip,lineargradient)
    // AVOID THE USE OF PIECHART FOR SHORT PIERANGE CHANGES
-   //NOTE THAT WHILE USING ARROWTIP OR BALLTIP THE STROKEWIDTH IS SET TO 0.045% THE WIDTH, FOR BEST UI DISPLAY 
+   //NOTE THAT WHILE USING ARROWTIP OR BALLTIP THE STROKEWIDTH IS SET TO 0.045% THE WIDTH, FOR BEST UI DISPLAY
+    //NOTE THAT WHILE USING ARROWTIP OR BALLTIP IN QUATERCIRCLE AND SEMICIRCLE IS NOT TOTALLY COMPACTIBLE IN ALL WIDTH AND RANGES  
 }
 ```
 

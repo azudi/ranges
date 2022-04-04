@@ -588,12 +588,12 @@ const range = {
              
               moduleClickChild.innerHTML=`
               
-                <linearGradient id="grad" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
+                <linearGradient id="gradcir${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
                 ${stop}
                 </linearGradient>
 
                 <circle
-                stroke="url(#grad)"
+                stroke="url(#gradcir${id})"
                 style='
                 stroke-width:${widestroke?(strokewidth*2):strokewidth}px;
                 cy:${width / 2};
@@ -616,12 +616,12 @@ const range = {
              
             moduleClickChild.innerHTML=`
             
-              <radialGradient id="grad" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
+              <radialGradient id="gradcir2${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
               ${stop}
               </radialGradient>
 
               <circle
-              stroke="url(#grad)"
+              stroke="url(#gradcir2${id})"
               style='
               stroke-width:${widestroke?(strokewidth*2):strokewidth}px;
               cy:${width / 2};
@@ -975,12 +975,12 @@ const range = {
              
               moduleClickChild.innerHTML=`
               
-                <linearGradient id="grad" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
+                <linearGradient id='grad${id}' cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
                 ${stop}
                 </linearGradient>
 
                 <circle
-                stroke="url(#grad)"
+                stroke="url(#grad${id})"
                 style='
                 stroke-width:${widestroke?(strokewidth*2):strokewidth}px;
                 cy:${width / 2};
@@ -989,7 +989,7 @@ const range = {
                 fill:transparent;
                 stroke-dashoffset:0;
                 stroke-dasharray: ${(percent * (((rangevalue/2) * width) / 2)) / 100} ${
-                        ((100 - percent) * (((rangevalue/2) * width) / 2)) / 100
+                        ((100 - percent) * (((rangevalue*2) * width) / 2)) / 100
                       };
                 stroke-linecap:${rounded ? "round" : "none"};
                 '
@@ -1003,12 +1003,12 @@ const range = {
              
             moduleClickChild.innerHTML=`
             
-              <radialGradient id="grad" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
+              <radialGradient id="grad2${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
               ${stop}
               </radialGradient>
 
               <circle
-              stroke="url(#grad)"
+              stroke="url(#grad2${id})"
               style='
               stroke-width:${widestroke?(strokewidth*2):strokewidth}px;
               cy:${width / 2};
@@ -1594,4 +1594,396 @@ linechart: function ({
   }
 
 },
+
+//code for 2/3 circular progress bar
+
+ 
+quatercircle: function ({
+  id,
+  color,
+  width,
+  strokewidth,
+  percent,
+  rounded,
+  fontsize,
+  textcolor,
+  textbold,
+  indicator,
+  track,
+  trackcolor,
+  trackfit,
+  widetrack,
+  dashed,
+  unit,
+  balltip,
+  arrowtip,
+  fillbackground,
+  breakcolor,
+  boxshadow,
+  widestroke,
+  gradient,
+  dashtrack,
+  extratext,
+  extratextcolor,
+}) {
+  //code for error
+  if (percent > 100) {
+    console.log("percent cannot be greater than 100");
+  }
+
+  if (document.getElementById(id)) {
+
+    const moduleClick = document.getElementById(id);
+    const moduleClickChild = moduleClick.children[0];
+    const moduleClickChildNext = moduleClick.children[0].children[0];
+    fillbackground ? (dashed = false) : (dashed = dashed);
+    unit ? (unit = unit) : (unit = "%");
+    width ? (width = width) : (width = 200);
+    color ? (color = color) : (color = "black");
+    trackfit ? (track = false) : (track = track);
+    dashed ? (track = false) : (track = track);
+    balltip || arrowtip ? strokewidth<width*0.04?strokewidth=width*0.045:strokewidth=strokewidth : (strokewidth = strokewidth);
+    let rangevalue=5.8;
+    widestroke?rangevalue=(rangevalue*0.99):rangevalue=5.8
+
+    for (let i = 0; i < moduleClick.children.length; i++) {
+      if (moduleClick.children[i].tagName === "SPAN") {
+        moduleClick.children[i].remove();
+      }
+    } //code below is to display indicator in center
+
+    for (let i = 0; i < moduleClick.children.length; i++) {
+      if (moduleClick.children[i].tagName === "SPAN") {
+        moduleClick.children[i].remove();
+      }
+    } //code below is to display indicator in center
+
+    for (let i = 0; i < moduleClick.children.length; i++) {
+      if (moduleClick.children[i].tagName === "SPAN") {
+        moduleClick.children[i].remove();
+      }
+    }
+     //code below is to display indicator in center
+    // code to adjust the strokewide based on the width
+
+    if (strokewidth) {
+      if (strokewidth < width * 0.05) {
+        strokewidth = strokewidth;
+      } else {
+        strokewidth = width * 0.05;
+      }
+    } // end of code to adjust the strokewide based on the width
+
+    const rollerIndicatorSemi = document.createElement("span");
+    rollerIndicatorSemi.classList.add("rollerindicator_div");
+    const extratextaddSemi = document.createElement("span");
+
+    rollerIndicatorSemi.innerHTML = `${percent}${unit}`; //code to show the percent in number
+    moduleClick.appendChild(rollerIndicatorSemi);
+
+    rollerIndicatorSemi.style.cssText = `position:absolute;top:calc(35% - ${
+      fontsize / 2
+    }px);
+ left:calc(50% - ${fontsize / 2}px);
+ text-align:center;
+ width:${fontsize}px;
+ height:${fontsize}px;
+ display:${indicator == true ? "inline-flex" : "none"};
+ justify-content:center;
+ align-items:center;
+ font-weight:${textbold ? textbold : 300};
+ color:${textcolor ? textcolor : "black"};
+ font-size:${fontsize}px;
+ `; //end of code to show the percent in number
+   
+  if(extratext){
+    extratextaddSemi.classList.add("extratext_div");
+    extratextaddSemi.style.cssText = `position:absolute;top:calc(35% + ${
+      fontsize/2
+    }px);
+      left:${strokewidth*4}px;
+      text-align:center;
+      display:block;
+      width:${width-(strokewidth*8)}px;text-align:center;
+      height:${fontsize}px;line-height:12.5px;
+      display:${indicator == true ? "inline-block" : "none"};
+      justify-content:center;padding-top:2%;
+      align-items:center;
+      font-weight:${textbold ? textbold : 300};
+      color:${extratextcolor ? extratextcolor : textcolor};
+      font-size:${fontsize/1.85}px;
+      `; //end of code to show the percent in number
+      extratextaddSemi.innerHTML=extratext
+    moduleClick.appendChild(extratextaddSemi)
+  }
+
+    if (track && track == true) {
+      //code for track which the stroke move along
+      const trackdivSemi = document.createElement("span");
+      const rangetrackSemi = document.createElement("span");
+      trackdivSemi.appendChild(rangetrack);
+      moduleClick.appendChild(trackdiv);
+      trackdivSemi.style.cssText = `position:absolute;top:0;left:0;width:100%;height:100%;
+  display:block !important;
+  `;
+      rangetrackSemi.style.cssText = `position:absolute;
+ width:calc(100% - ${strokewidth * 2}px);
+ height:calc(100% - ${strokewidth * 2}px);
+ border:${strokewidth + 1}px solid ${
+        trackcolor ? trackcolor : "rgba(0,0,0,0.07)"
+      };
+ top:${strokewidth}px;left:${strokewidth}px;
+ border-radius:50%;
+ display:${track ? "inline-block" : "none"};
+ z-index:-1
+ `;
+    } //end of code for track which the stroke move along
+    //code below for dashed and trackfit
+
+    if (dashed && dashed == true && moduleClick.children.length < 5) {
+      let widewidth;
+      widetrack
+        ? (widewidth = strokewidth * 2)
+        : (widewidth = strokewidth + 1);
+      let svgSemi = document.createElement("span");
+      svgSemi.classList.add("roller_rx_range_rx");
+      svgSemi.style.cssText = `width:${width}px;
+      height:${width}px;
+      position:absolute;top:0;left:0;`;
+            svgSemi.innerHTML = `<svg width=${width}px height=${width}px>
+      <circle cy=${width / 2} cx=${width / 2} 
+      r=${width / 2 - strokewidth} 
+      fill='transparent'
+      style='
+      stroke-width:${widewidth+1}px;
+      stroke:${breakcolor};
+      stroke-dashoffset:0 0;
+      stroke-dasharray:${dashtrack?dashtrack:"5 15"};
+      stroke-linecap:none;
+      '
+      />
+      </svg>`;
+      moduleClick.appendChild(svgSemi);
+    }
+
+    if (trackfit && trackfit == true && moduleClick.children.length < 5) {
+      let widewidth;
+      widetrack ? (widewidth = strokewidth * 2) : (widewidth = strokewidth);
+      let svg = document.createElement("span");
+      svg.classList.add("roller_rx_range_rx2");
+      svg.style.cssText = `width:${width}px;
+      height:${width}px;transform:rotateZ(-90deg);
+      position:absolute;top:0;left:0;z-index:-1`;
+            svg.innerHTML = `<svg width=${width}px height=${width}px>
+      <circle cy=${width / 2} cx=${width / 2} 
+      r=${width / 2 - strokewidth} 
+      fill='transparent'
+      style='
+      stroke-width:${widewidth}px;
+      stroke:rgba(235,235,235,1);
+      stroke-linecap:${rounded ? "round" : "none"};
+      '
+      />
+      </svg>`;
+      moduleClick.appendChild(svg);
+    } //end of code for dashed and trackfit
+
+    if (width) {
+      moduleClick.style.cssText = `width:${width}px;
+ height:${width}px;position:relative;
+
+ `;
+
+      if (fillbackground && fillbackground != "") {
+        moduleClick.style.cssText = `${moduleClick.style.cssText};background:${fillbackground};
+     border-radius:50%;
+   `;
+        dashed = false;
+      } //code below for balltip
+
+      if (balltip && balltip == true) {
+        let ball = document.createElement("span");
+        let tip = document.createElement("span");
+        ball.style.cssText = `
+           position:absolute;top:0;left:0;
+           width:100%;height:100%;
+           border-radius:50%;
+           display:block;
+           z-index:100;
+           transform:rotateZ(${((percent / 100) * 270)-(157)}deg);  
+         `;
+        tip.style.cssText = `
+           position:absolute;top:-0.5px;
+           left:50%;width:${strokewidth * 2}px;
+           height:${strokewidth * 2}px;
+           border-radius:inherit;
+           background:${color};
+         `;
+        ball.appendChild(tip);
+        moduleClick.appendChild(ball);
+      } //end of code for balltip
+
+
+        //code below for arrowtip
+    
+        if (arrowtip && arrowtip == true) {
+          let ballbox = document.createElement("span");
+          let tipbox = document.createElement("span");
+          ballbox.style.cssText = `
+          position:absolute;top:0;left:0;
+          width:100%;height:100%;
+          border-radius:50%;
+          display:block;
+          transform:rotateZ(${((percent / 100) * 270)-157}deg)  
+        `;
+          tipbox.style.cssText = `
+          position:absolute;top:${-strokewidth/2}px;
+          left:calc(50% + 2px);width:${strokewidth*3}px;
+          height:${strokewidth*3}px;
+          display:inline-block;
+        background:${color};
+        clip-path:polygon(0 0, 0 100%, 60% 50%);
+      border-radius:50px
+        `;
+          ballbox.appendChild(tipbox);
+          moduleClick.appendChild(ballbox);
+        } //end of code for arrowtip
+  //end of code for arrowtip
+
+ 
+
+      moduleClickChild.style.cssText = `width:${width}px;
+ height:${width}px;transform:rotateZ(0deg);z-index:20 !important;
+ 
+ `;
+      moduleClickChildNext.style.cssText = `
+      stroke:${color ? color : "black"};
+ stroke-width:${widestroke?(strokewidth*2)-1:strokewidth}px;
+ cy:${width / 2};
+ cx:${width / 2};
+ r:${width / 2 - strokewidth};
+ fill:transparent;
+ stroke-dashoffset:0;
+ stroke-dasharray: ${(percent * (((rangevalue*0.75) * width) / 2)) / 100} ${
+  ((100 - percent) * (((rangevalue*1.25) * width) / 2)) / 100
+};
+ stroke-linecap:${rounded ? "round" : "none"};
+ animation:2s infinite linear svgroller
+ `;
+    } 
+     
+
+
+    //code for box shadow
+      if(boxshadow && boxshadow.lastIndexOf(" ")){ 
+     let shadow= document.createElement("span")
+     let shadowinner= document.createElement("span")
+        shadow.style.cssText=`
+           width:100%;height:100%;
+           border-radius:50%;
+           position:absolute;top:0;left:0;
+           
+        `
+        shadowinner.style.cssText=`
+        position:absolute;top:${strokewidth*2}px;
+        left:${strokewidth*2}px;width:calc(100% - ${4*strokewidth}px);
+        height:calc(100% - ${4*strokewidth}px);
+        border-radius:inherit;
+        box-shadow: 2px 4px 10px rgba(0,0,0,${boxshadow.substring(0,boxshadow.lastIndexOf(" "))}),
+     -2px -4px 10px rgba(0,0,0,${boxshadow.substring(0,boxshadow.lastIndexOf(" "))}),
+     inset -2px -4px 10px rgba(0,0,0,${boxshadow.substring(boxshadow.lastIndexOf(" "),boxshadow.length)}),
+    inset 2px 4px 10px rgba(0,0,0,${boxshadow.substring(boxshadow.lastIndexOf(" "),boxshadow.length)});
+        `
+        shadow.appendChild(shadowinner)
+      moduleClick.appendChild(shadow)
+    moduleClick.style.cssText=`
+    ${moduleClick.style.cssText};
+    box-shadow:inset 2px 6px 10px rgba(0,0,0,0.15),
+    inset -2px -6px 10px rgba(0,0,0,0.15);
+    border-radius:50%;
+    `
+      }
+        //end of code for box shadow
+
+        //code for gradient
+          if(gradient){
+             let stop=""
+                if(gradient.colors){
+                for(let i=0;i<gradient.colors.length;i++){
+                  stop=`${stop}  <stop
+                  offset="${gradient.colors[i].substring(gradient.colors[i].lastIndexOf(" "),gradient.colors[i].length)}" style="stop-color:${gradient.colors[i].substring(0,gradient.colors[i].lastIndexOf(" "))}; stop-opacity:1"
+                ></stop>`
+                }
+              }
+       
+              //code below for linear gradient 
+            if(gradient.type=="linear-gradient"){
+           
+            moduleClickChild.innerHTML=`
+            
+              <linearGradient id="gradquater${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
+              ${stop}
+              </linearGradient>
+
+              <circle
+              stroke="url(#gradquater${id})"
+              style='
+              stroke-width:${widestroke?(strokewidth*2):strokewidth}px;
+              cy:${width / 2};
+              cx:${width / 2};
+              r:${width / 2 - strokewidth};
+              fill:transparent;
+              stroke-dashoffset:0;
+              stroke-dasharray: ${(percent * (((rangevalue*0.75) * width) / 2)) / 100} ${
+                ((100 - percent) * (((rangevalue*1.25) * width) / 2)) / 100
+              };
+              stroke-linecap:${rounded ? "round" : "none"};
+              '
+              ></circle>
+           
+            `}
+             //end of code for linear gradient
+
+         //code below for radial gradient
+          if(gradient.type=="radial-gradient"){
+           
+          moduleClickChild.innerHTML=`
+          
+            <radialGradient id="gradquater2${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
+            ${stop}
+            </radialGradient>
+
+            <circle
+            stroke="url(#gradquater2${id})"
+            style='
+            stroke-width:${widestroke?(strokewidth*2):strokewidth}px;
+            cy:${width / 2};
+            cx:${width / 2};
+            r:${width / 2 - strokewidth};
+            fill:transparent;
+            stroke-dashoffset:0;
+            stroke-dasharray: ${(percent * (((rangevalue*0.75) * width) / 2)) / 100} ${
+                    ((100 - percent) * (((rangevalue*1.25) * width) / 2)) / 100
+                  };
+            stroke-linecap:${rounded ? "round" : "none"};
+            '
+            ></circle>
+         
+          `
+                }
+       //end of code for radial gradient
+          }
+        // end of code for gradient  
+      moduleClickChild.style.cssText=`
+      ${moduleClickChild.style.cssText};transform:rotateZ(${-225-(strokewidth*2)}deg)
+      `
+      moduleClick.style.cssText=`
+      ${moduleClick.style.cssText};height:${(width)-1}px;overflow-y:hidden;
+      overflow-x:hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 70% 61%, 29% 61%, 0 75%);                                                        
+      `
+  }
+ 
+},
+
 }

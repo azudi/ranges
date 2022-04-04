@@ -530,12 +530,11 @@
 
             <em>  
                <em class="text-gray"> //  Note using arrowtip/balltip the stroke width must be greater than 4% the width </em>   
-              
                let people9=new range.semicircle({
                 id:"circle9-div",
                 width:190,
-              strokewidth:15,
-              percent:79,
+              strokewidth:10,
+              percent:67,
               rounded:false,
               fontsize:18,
               color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
@@ -553,13 +552,13 @@
               arrowtip:true,
               widestroke:true,
               breakcolor:"white",
-              boxshadow:"0.1 0.2",
+              boxshadow:"0.2 0.07",
               gradient:{
                     type:"radial-gradient",
                     colors:["lightblue 0%","navy 100%"],
                     orientation:{x:50,y:50,fill:100}
               },
-              })
+              }))
             
             </em>
         </code>
@@ -629,7 +628,7 @@
               unit:"&deg;",
               widestroke:true,
               breakcolor:"white",
-              boxshadow:"0.06 0.1",
+              boxshadow:"0.2 0.07"
               dashed:true,
               dashtrack:"1.5 3",
               gradient:{
@@ -648,6 +647,82 @@
 <!-- code below is for the range output -->
      <div class="col-md-5 range-container">
       <div id="circle10-div"> 
+        <svg>
+        <circle/>
+        </svg>
+        </div>
+   </div>
+<!--end of code for the range output -->
+   </div>
+       <!--end of range container -->
+</div>
+
+
+
+
+
+
+<div class="flex col-md-12">
+     
+  <!-- begin of range container -->
+  <div class="flex centered-content col-md-10 col-lg-8 col-sm-11" >
+
+    <!-- code for the display of working codes -->
+     <div class="col-md-6" >
+       <pre>
+        <code >
+          <!-- begin of code header -->
+          <em class="code-head"> // HTML code</em> 
+       <em class="top-code"> &lt;div id="circle9-div"&gt; 
+        &lt;svg&gt; 
+        &lt;circle/&gt; 
+        &lt;/svg&gt; 
+            &lt;/div&gt;
+          </em>
+<!-- end of code header -->
+           <em class="code-head"> // javascript code</em>
+
+            <em>  
+               <em class="text-gray"> //  Note using arrowtip/balltip is not advisable to be use in quatercircle as the function is still in development</em>   
+              
+               let quater=new range.quatercircle({
+                id:"quater-div",
+                width:200,
+              strokewidth:10,
+              percent:80,
+              rounded:false,
+              fontsize:20,
+              color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
+              textcolor:"navy",
+              textbold:600,
+              track:true,
+              extratext:"Uprise of Bitcoin in present nigeria",
+              extratextcolor:'rgb(160,160,160)',
+              indicator:true,
+              animate:false,
+              trackcolor:"",
+              widetrack:true,
+              trackfit:true,
+              unit:"&deg;",
+              widestroke:true,
+              breakcolor:"white",
+              boxshadow:"0.2 0.07",
+              gradient:{
+                    type:"radial-gradient",
+                    colors:["lightblue 0%","navy 100%"],
+                    orientation:{x:50,y:50,fill:100}
+              },
+              })
+            </em>
+        </code>
+      </pre>
+     </div>
+     
+    <!-- end for the display of working codes -->
+
+<!-- code below is for the range output -->
+     <div class="col-md-5 range-container">
+      <div id="quater-div"> 
         <svg>
         <circle/>
         </svg>
@@ -868,6 +943,34 @@
   })
   
 
+  let quater=new range.quatercircle({
+    id:"quater-div",
+    width:180,
+  strokewidth:10,
+  percent:73,
+  rounded:false,
+  fontsize:20,
+  color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
+  textcolor:"navy",
+  textbold:600,
+  track:true,
+  extratext:"Uprise of Bitcoin in present nigeria",
+  extratextcolor:'rgb(160,160,160)',
+  indicator:true,
+  animate:false,
+  trackcolor:"",
+  widetrack:true,
+  trackfit:true,
+  unit:"&deg;",
+  widestroke:true,
+  breakcolor:"white",
+  boxshadow:"0.2 0.07",
+  gradient:{
+        type:"linear-gradient",
+        colors:["lightblue 0%","navy 100%"],
+        orientation:{x:50,y:50,fill:100}
+  },
+  })
 
 
   let people9=new range.semicircle({
@@ -892,7 +995,7 @@
   arrowtip:true,
   widestroke:true,
   breakcolor:"white",
-  boxshadow:"0.06 0.1",
+  boxshadow:"0.2 0.07",
   gradient:{
         type:"radial-gradient",
         colors:["lightblue 0%","navy 100%"],
@@ -907,7 +1010,7 @@
     id:"circle10-div",
     width:190,
   strokewidth:5,
-  percent:41,
+  percent:81,
   rounded:false,
   fontsize:20,
   color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
@@ -923,13 +1026,13 @@
   unit:"&deg;",
   widestroke:true,
   breakcolor:"white",
-  boxshadow:"0.06 0.1",
+  boxshadow:"0.2 0.05",
   dashed:true,
   dashtrack:"1.5 3",
   gradient:{
-        type:"radial-gradient",
-        colors:["lightblue 0%","navy 100%"],
-        orientation:{x:50,y:50,fill:100}
+      type:"linear-gradient",
+      colors:["lightblue 0%","navy 100%"],
+      orientation:{x:50,y:50,fill:100}
   },
   })
 
