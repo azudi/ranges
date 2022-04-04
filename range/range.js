@@ -1810,10 +1810,10 @@ quatercircle: function ({
            border-radius:50%;
            display:block;
            z-index:100;
-           transform:rotateZ(${((percent / 100) * 270)-(157)}deg);  
+           transform:rotateZ(${((percent / 100) * 270)-(width*0.75+2)}deg);  
          `;
         tip.style.cssText = `
-           position:absolute;top:-0.5px;
+           position:absolute;top:0.5px;
            left:50%;width:${strokewidth * 2}px;
            height:${strokewidth * 2}px;
            border-radius:inherit;
@@ -1830,14 +1830,14 @@ quatercircle: function ({
           let ballbox = document.createElement("span");
           let tipbox = document.createElement("span");
           ballbox.style.cssText = `
-          position:absolute;top:0;left:0;
+          position:absolute;top:1px;left:0;
           width:100%;height:100%;
           border-radius:50%;
           display:block;
-          transform:rotateZ(${((percent / 100) * 270)-157}deg)  
+          transform:rotateZ(${((percent / 100) * 270)-(width*0.75+2)}deg)  
         `;
           tipbox.style.cssText = `
-          position:absolute;top:${-strokewidth/2}px;
+          position:absolute;top:${-strokewidth/2-1}px;
           left:calc(50% + 2px);width:${strokewidth*3}px;
           height:${strokewidth*3}px;
           display:inline-block;
@@ -1973,9 +1973,10 @@ quatercircle: function ({
                 }
        //end of code for radial gradient
           }
-        // end of code for gradient  
+        // end of code for gradient 
+        let calcwidth=strokewidth>50?0:strokewidth*3 
       moduleClickChild.style.cssText=`
-      ${moduleClickChild.style.cssText};transform:rotateZ(${-225-(strokewidth*2)}deg)
+      ${moduleClickChild.style.cssText};transform:rotateZ(${-212.5-((percent/100)*(calcwidth))}deg)
       `
       moduleClick.style.cssText=`
       ${moduleClick.style.cssText};height:${(width)-1}px;overflow-y:hidden;
