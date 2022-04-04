@@ -1981,7 +1981,7 @@ quatercircle: function ({
       moduleClick.style.cssText=`
       ${moduleClick.style.cssText};height:${(width)-1}px;overflow-y:hidden;
       overflow-x:hidden;
-      clip-path: polygon(0 0, 100% 0, 100% 75%, 70% 61%, 29% 61%, 0 75%);                                                        
+      clip-path: polygon(0 0, 100% 0, 100% 82%, 68% 61%, 29% 68%, 0 82%);                                                        
       `
   }
  
