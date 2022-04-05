@@ -348,9 +348,9 @@ const range = {
       rollerIndicator.style.cssText = `position:absolute;top:calc(50% - ${
         fontsize / 2
       }px);
-   left:calc(50% - ${fontsize / 2}px);
+   left:calc(0% + ${strokewidth*3}px);
    text-align:center;
-   width:${fontsize}px;
+   width:${width - (strokewidth*6)}px;
    height:${fontsize}px;
    display:${indicator == true ? "inline-flex" : "none"};
    justify-content:center;
@@ -738,9 +738,9 @@ const range = {
       rollerIndicatorSemi.style.cssText = `position:absolute;top:calc(25% - ${
         fontsize / 2
       }px);
-   left:calc(50% - ${fontsize / 2}px);
+   left:calc(0% + ${strokewidth*4}px);
    text-align:center;
-   width:${fontsize}px;
+   width:${width - (strokewidth*8)}px;
    height:${fontsize}px;
    display:${indicator == true ? "inline-flex" : "none"};
    justify-content:center;
@@ -1684,9 +1684,9 @@ quatercircle: function ({
     rollerIndicatorSemi.style.cssText = `position:absolute;top:calc(35% - ${
       fontsize / 2
     }px);
- left:calc(50% - ${fontsize / 2}px);
+ left:calc(0% + ${strokewidth*3.5}px);
  text-align:center;
- width:${fontsize}px;
+ width:${width - (strokewidth*7)}px;
  height:${fontsize}px;
  display:${indicator == true ? "inline-flex" : "none"};
  justify-content:center;
