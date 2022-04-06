@@ -148,7 +148,8 @@
 <!-- end of code header -->
            <em class="code-head"> // javascript code</em> 
             <em> 
-              let circle6=new range.circle({
+            
+              let people6=new range.circle({
                 id:"circle6-div",
                 width:200,
                 strokewidth:5,
@@ -528,35 +529,37 @@
 
             <em>  
                <em class="text-gray"> //  Note using arrowtip/balltip the stroke width must be greater than 4% the width </em>   
-               let people9=new range.semicircle({
-                id:"circle9-div",
-                width:200,
-              strokewidth:10,
-              percent:67,
-              rounded:false,
-              fontsize:18,
-              color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
-              textcolor:"navy",
-              textbold:500,
-              track:true,
-              extratext:"Uprise of Bitcoin in present nigeria",
-              extratextcolor:'rgb(160,160,160)',
-              indicator:true,
-              animate:false,
-              trackcolor:"",
-              widetrack:true,
-              trackfit:true,
-              unit:"%",
-              arrowtip:true,
-              widestroke:true,
-              breakcolor:"white",
-              boxshadow:"0.2 0.07",
-              gradient:{
-                    type:"radial-gradient",
-                    colors:["lightblue 0%","navy 100%"],
-                    orientation:{x:50,y:50,fill:100}
-              },
-              })
+             
+          let circle9=new range.semicircle({
+            id:"circle9-div",
+            width:200,
+          strokewidth:10,
+          percent:67,
+          rounded:false,
+          fontsize:18,
+          color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
+          textcolor:"navy",
+          textbold:500,
+          track:true,
+          extratext:"Uprise of Bitcoin in present nigeria",
+          extratextcolor:'rgb(160,160,160)',
+          indicator:true,
+          animate:false,
+          trackcolor:"",
+          widetrack:true,
+          trackfit:true,
+          unit:"%",
+          balltip:true,
+          widestroke:true,
+          breakcolor:"white",
+          boxshadow:"0.2 0.07",
+          gradient:{
+                type:"radial-gradient",
+                colors:["lightblue 0%","navy 100%"],
+                orientation:{x:50,y:50,fill:100}
+          },
+          })
+
             
             </em>
         </code>
@@ -608,12 +611,12 @@
               
                let people10=new range.semicircle({
                 id:"circle10-div",
-                width:200,
-              strokewidth:15,
-              percent:77,
+                width:250,
+              strokewidth:20,
+              percent:47,
               rounded:false,
               fontsize:20,
-              color:"red",
+              color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
               textcolor:"navy",
               textbold:600,
               track:true,
@@ -628,12 +631,14 @@
               breakcolor:"white",
               boxshadow:"0.2 0.05",
               dashtrack:"1.5 3",
+              arrowtip:true,
               gradient:{
                   type:"linear-gradient",
                   colors:["lightblue 0%","navy 100%"],
                   orientation:{x:50,y:50,fill:100}
               },
               })
+            
             </em>
         </code>
       </pre>
@@ -684,12 +689,12 @@
               
                let quater=new range.quatercircle({
                 id:"quater-div",
-                width:180,
-              strokewidth:10,
-              percent:57,
+                width:200,
+              strokewidth:7,
+              percent:27,
               rounded:false,
               fontsize:20,
-              color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
+              color:"linear-gradient(-180deg,lightblue 0%,navy 100%)",
               textcolor:"navy",
               textbold:600,
               track:true,
@@ -701,11 +706,12 @@
               widetrack:true,
               trackfit:true,
               unit:"&deg;",
+              arrowtip:true,
               widestroke:true,
               breakcolor:"white",
               boxshadow:"0.2 0.07",
               gradient:{
-                    type:"linear-gradient",
+                    type:"radial-gradient",
                     colors:["lightblue 0%","navy 100%"],
                     orientation:{x:50,y:50,fill:100}
               },
@@ -945,11 +951,11 @@
   let quater=new range.quatercircle({
     id:"quater-div",
     width:200,
-  strokewidth:20,
-  percent:17,
+  strokewidth:7,
+  percent:27,
   rounded:false,
   fontsize:20,
-  color:"red",
+  color:"linear-gradient(-180deg,lightblue 0%,navy 100%)",
   textcolor:"navy",
   textbold:600,
   track:true,
@@ -961,11 +967,12 @@
   widetrack:true,
   trackfit:true,
   unit:"&deg;",
+  arrowtip:true,
   widestroke:true,
   breakcolor:"white",
   boxshadow:"0.2 0.07",
   gradient:{
-        type:"linear-gradient",
+        type:"radial-gradient",
         colors:["lightblue 0%","navy 100%"],
         orientation:{x:50,y:50,fill:100}
   },
@@ -991,7 +998,7 @@
   widetrack:true,
   trackfit:true,
   unit:"%",
-  arrowtip:true,
+  balltip:true,
   widestroke:true,
   breakcolor:"white",
   boxshadow:"0.2 0.07",
@@ -1007,12 +1014,12 @@
   
   let people10=new range.semicircle({
     id:"circle10-div",
-    width:200,
-  strokewidth:15,
-  percent:77,
+    width:250,
+  strokewidth:20,
+  percent:47,
   rounded:false,
   fontsize:20,
-  color:"red",
+  color:"linear-gradient(90deg,lightblue 0%,navy 100%)",
   textcolor:"navy",
   textbold:600,
   track:true,
@@ -1027,6 +1034,7 @@
   breakcolor:"white",
   boxshadow:"0.2 0.05",
   dashtrack:"1.5 3",
+  arrowtip:true,
   gradient:{
       type:"linear-gradient",
       colors:["lightblue 0%","navy 100%"],

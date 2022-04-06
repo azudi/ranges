@@ -447,7 +447,9 @@ const range = {
         fill='transparent'
         style='
         stroke-width:${widewidth}px;
-        stroke:rgba(235,235,235,1);
+        stroke:${
+          trackcolor ? trackcolor : "rgba(0,0,0,0.07)"
+        };
         stroke-linecap:${rounded ? "round" : "none"};
         '
         />
@@ -834,7 +836,9 @@ const range = {
         fill='transparent'
         style='
         stroke-width:${widewidth}px;
-        stroke:rgba(235,235,235,1);
+        stroke:${
+          trackcolor ? trackcolor : "rgba(0,0,0,0.07)"
+        };
         stroke-linecap:${rounded ? "round" : "none"};
         '
         />
@@ -863,7 +867,7 @@ const range = {
              border-radius:50%;
              display:block;
              z-index:100;
-             transform:rotateZ(${((percent / 100) * 180)-90}deg)  
+             transform:rotateZ(${((percent / 100) * 180)-90-(width*0.035)+(strokewidth/3)}deg)  
            `;
           tip.style.cssText = `
              position:absolute;top:0.5px;
@@ -887,7 +891,7 @@ const range = {
             width:100%;height:100%;
             border-radius:50%;
             display:block;
-            transform:rotateZ(${((percent / 100) * 180)-90}deg)  
+            transform:rotateZ(${((percent / 100) * 180)-90-(width*0.03)+strokewidth/2.3}deg)  
           `;
             tipbox.style.cssText = `
             position:absolute;top:${-strokewidth/2}px;
@@ -917,9 +921,9 @@ const range = {
    r:${width / 2 - strokewidth};
    fill:transparent;
    stroke-dashoffset:0;
-   stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.45/width)) * (((rangevalue) * width) / 2)) / 100} ${
+   stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.0005)) * (((rangevalue) * width) / 2)) / 100} ${
     ((100 - percent*0.5) * (((rangevalue) * width) / 2)) / 100
-  };
+      };
    stroke-linecap:${rounded ? "round" : "none"};
    animation:2s infinite linear svgroller
    `;
@@ -935,7 +939,6 @@ const range = {
              width:100%;height:100%;
              border-radius:50%;
              position:absolute;top:0;left:0;
-             
           `
           shadowinner.style.cssText=`
           position:absolute;top:${strokewidth*2}px;
@@ -986,9 +989,9 @@ const range = {
                 r:${width / 2 - strokewidth};
                 fill:transparent;
                 stroke-dashoffset:0;
-                stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.45/width)) * (((rangevalue) * width) / 2)) / 100} ${
+                stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.0005)) * (((rangevalue) * width) / 2)) / 100} ${
                   ((100 - percent*0.5) * (((rangevalue) * width) / 2)) / 100
-                };
+                    };
                 stroke-linecap:${rounded ? "round" : "none"};
                 '
                 ></circle>
@@ -1013,9 +1016,9 @@ const range = {
               r:${width / 2 - strokewidth};
               fill:transparent;
               stroke-dashoffset:0;
-              stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.45/width)) * (((rangevalue) * width) / 2)) / 100} ${
+              stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.0005)) * (((rangevalue) * width) / 2)) / 100} ${
                 ((100 - percent*0.5) * (((rangevalue) * width) / 2)) / 100
-              };
+                  };
               stroke-linecap:${rounded ? "round" : "none"};
               '
               ></circle>
@@ -1775,7 +1778,9 @@ quatercircle: function ({
       fill='transparent'
       style='
       stroke-width:${widewidth}px;
-      stroke:rgba(235,235,235,1);
+      stroke:${
+        trackcolor ? trackcolor : "rgba(0,0,0,0.07)"
+      };
       stroke-linecap:${rounded ? "round" : "none"};
       '
       />
@@ -1804,7 +1809,7 @@ quatercircle: function ({
            border-radius:50%;
            display:block;
            z-index:100;
-           transform:rotateZ(${((percent / 100) * 270)-(width*0.75+2)}deg);  
+           transform:rotateZ(${-((percent*0.75 / 100) * 270)-(strokewidth*0.76)}deg);  
          `;
         tip.style.cssText = `
            position:absolute;top:0.5px;
@@ -1828,7 +1833,7 @@ quatercircle: function ({
           width:100%;height:100%;
           border-radius:50%;
           display:block;
-          transform:rotateZ(${((percent / 100) * 270)-(width*0.75+2)}deg)  
+          transform:rotateZ(${-((percent*0.75 / 100) * 270)-(strokewidth*0.4)}deg); 
         `;
           tipbox.style.cssText = `
           position:absolute;top:${-strokewidth/2-1}px;
@@ -1858,9 +1863,9 @@ quatercircle: function ({
  r:${width / 2 - strokewidth};
  fill:transparent;
  stroke-dashoffset:0;
- stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.5/width)) * (((rangevalue) * width) / 2)) / 100} ${
+ stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.0025)) * (((rangevalue) * width) / 2)) / 100} ${
   ((100 - percent*0.25) * (((rangevalue) * width) / 2)) / 100
-};
+    };
  stroke-linecap:${rounded ? "round" : "none"};
  animation:2s infinite linear svgroller
  `;
@@ -1927,9 +1932,9 @@ quatercircle: function ({
               r:${width / 2 - strokewidth};
               fill:transparent;
               stroke-dashoffset:0;
-              stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.5/width)) * (((rangevalue) * width) / 2)) / 100} ${
+              stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.0025)) * (((rangevalue) * width) / 2)) / 100} ${
                 ((100 - percent*0.25) * (((rangevalue) * width) / 2)) / 100
-              };
+                  };
               stroke-linecap:${rounded ? "round" : "none"};
               '
               ></circle>
@@ -1954,9 +1959,9 @@ quatercircle: function ({
             r:${width / 2 - strokewidth};
             fill:transparent;
             stroke-dashoffset:0;
-            stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.5/width)) * (((rangevalue) * width) / 2)) / 100} ${
+            stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.0025)) * (((rangevalue) * width) / 2)) / 100} ${
               ((100 - percent*0.25) * (((rangevalue) * width) / 2)) / 100
-            };
+                };
             stroke-linecap:${rounded ? "round" : "none"};
             '
             ></circle>
@@ -1966,9 +1971,9 @@ quatercircle: function ({
        //end of code for radial gradient
           }
         // end of code for gradient 
-        let calcwidth=strokewidth>50?0:strokewidth*3 
+        let calcwidth=strokewidth>50?0:strokewidth*3
       moduleClickChild.style.cssText=`
-      ${moduleClickChild.style.cssText};transform:rotateZ(${-212.5-((percent/100)*(calcwidth))}deg)
+      ${moduleClickChild.style.cssText};transform:rotateZ(${-213.5-((percent/100)*(calcwidth))}deg)
       `
       moduleClick.style.cssText=`
       ${moduleClick.style.cssText};height:${(width)-1}px;overflow-y:hidden;
