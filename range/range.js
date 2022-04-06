@@ -591,7 +591,6 @@ const range = {
                 <linearGradient id="gradcir${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
                 ${stop}
                 </linearGradient>
-
                 <circle
                 stroke="url(#gradcir${id})"
                 style='
@@ -619,7 +618,6 @@ const range = {
               <radialGradient id="gradcir2${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
               ${stop}
               </radialGradient>
-
               <circle
               stroke="url(#gradcir2${id})"
               style='
@@ -721,10 +719,10 @@ const range = {
       // code to adjust the strokewide based on the width
 
       if (strokewidth) {
-        if (strokewidth < width * 0.05) {
+        if (strokewidth < width * 0.04) {
           strokewidth = strokewidth;
         } else {
-          strokewidth = width * 0.05;
+          strokewidth = width * 0.04;
         }
       } // end of code to adjust the strokewide based on the width
 
@@ -734,6 +732,8 @@ const range = {
   
       rollerIndicatorSemi.innerHTML = `${percent}${unit}`; //code to show the percent in number
       moduleClick.appendChild(rollerIndicatorSemi);
+
+  
 
       rollerIndicatorSemi.style.cssText = `position:absolute;top:calc(25% - ${
         fontsize / 2
@@ -845,7 +845,6 @@ const range = {
       if (width) {
         moduleClick.style.cssText = `width:${width}px;
    height:${width}px;position:relative;
-
    `;
 
         if (fillbackground && fillbackground != "") {
@@ -918,9 +917,9 @@ const range = {
    r:${width / 2 - strokewidth};
    fill:transparent;
    stroke-dashoffset:0;
-   stroke-dasharray: ${(percent * (((rangevalue/2) * width) / 2)) / 100} ${
-          ((100 - percent) * (((rangevalue*2) * width) / 2)) / 100
-        };
+   stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.45/width)) * (((rangevalue) * width) / 2)) / 100} ${
+    ((100 - percent*0.5) * (((rangevalue) * width) / 2)) / 100
+  };
    stroke-linecap:${rounded ? "round" : "none"};
    animation:2s infinite linear svgroller
    `;
@@ -972,13 +971,12 @@ const range = {
          
                 //code below for linear gradient 
               if(gradient.type=="linear-gradient"){
-             
+                
               moduleClickChild.innerHTML=`
               
                 <linearGradient id='grad${id}' cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
                 ${stop}
                 </linearGradient>
-
                 <circle
                 stroke="url(#grad${id})"
                 style='
@@ -988,9 +986,9 @@ const range = {
                 r:${width / 2 - strokewidth};
                 fill:transparent;
                 stroke-dashoffset:0;
-                stroke-dasharray: ${(percent * (((rangevalue/2) * width) / 2)) / 100} ${
-                        ((100 - percent) * (((rangevalue*2) * width) / 2)) / 100
-                      };
+                stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.45/width)) * (((rangevalue) * width) / 2)) / 100} ${
+                  ((100 - percent*0.5) * (((rangevalue) * width) / 2)) / 100
+                };
                 stroke-linecap:${rounded ? "round" : "none"};
                 '
                 ></circle>
@@ -1006,7 +1004,6 @@ const range = {
               <radialGradient id="grad2${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
               ${stop}
               </radialGradient>
-
               <circle
               stroke="url(#grad2${id})"
               style='
@@ -1016,9 +1013,9 @@ const range = {
               r:${width / 2 - strokewidth};
               fill:transparent;
               stroke-dashoffset:0;
-              stroke-dasharray: ${(percent * (((rangevalue/2) * width) / 2)) / 100} ${
-                      ((100 - percent) * (((rangevalue*2) * width) / 2)) / 100
-                    };
+              stroke-dasharray: ${(percent*(percent>99?1:0.49+(strokewidth*0.45/width)) * (((rangevalue) * width) / 2)) / 100} ${
+                ((100 - percent*0.5) * (((rangevalue) * width) / 2)) / 100
+              };
               stroke-linecap:${rounded ? "round" : "none"};
               '
               ></circle>
@@ -1029,12 +1026,12 @@ const range = {
             }
           // end of code for gradient  
         moduleClickChild.style.cssText=`
-        ${moduleClickChild.style.cssText};transform:rotateZ(-178deg)
+        ${moduleClickChild.style.cssText};transform:rotateZ(-180deg)
         `
         moduleClick.style.cssText=`
         ${moduleClick.style.cssText};height:${(width)-1}px;overflow-y:hidden;
         overflow-x:hidden;
-        clip-path: polygon(50% 0%, 100% 0, 100% 50%, 68% 50%, 23% 50%, 0 50%, 0 0);
+        clip-path: polygon(49% 0%, 100% 0, 100% 49%, 68% 49%, 23% 49%, 0 49%, 0 0);
         `
         
     }
@@ -1430,7 +1427,6 @@ const range = {
      
 
           svgPie.innerHTML = `
-
           <svg range=${pierange[p]} title=${stroketitle[p]} width=${width}px height=${width}px style="z-index:1">
            
           <circle  cy=${width / 2} cx=${width / 2} 
@@ -1447,7 +1443,6 @@ const range = {
             '
             />
             </svg>
-
    
     
   ${strokepattern?`
@@ -1791,7 +1786,6 @@ quatercircle: function ({
     if (width) {
       moduleClick.style.cssText = `width:${width}px;
  height:${width}px;position:relative;
-
  `;
 
       if (fillbackground && fillbackground != "") {
@@ -1864,8 +1858,8 @@ quatercircle: function ({
  r:${width / 2 - strokewidth};
  fill:transparent;
  stroke-dashoffset:0;
- stroke-dasharray: ${(percent * (((rangevalue*0.75) * width) / 2)) / 100} ${
-  ((100 - percent) * (((rangevalue*1.25) * width) / 2)) / 100
+ stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.5/width)) * (((rangevalue) * width) / 2)) / 100} ${
+  ((100 - percent*0.25) * (((rangevalue) * width) / 2)) / 100
 };
  stroke-linecap:${rounded ? "round" : "none"};
  animation:2s infinite linear svgroller
@@ -1924,7 +1918,6 @@ quatercircle: function ({
               <linearGradient id="gradquater${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
               ${stop}
               </linearGradient>
-
               <circle
               stroke="url(#gradquater${id})"
               style='
@@ -1934,8 +1927,8 @@ quatercircle: function ({
               r:${width / 2 - strokewidth};
               fill:transparent;
               stroke-dashoffset:0;
-              stroke-dasharray: ${(percent * (((rangevalue*0.75) * width) / 2)) / 100} ${
-                ((100 - percent) * (((rangevalue*1.25) * width) / 2)) / 100
+              stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.5/width)) * (((rangevalue) * width) / 2)) / 100} ${
+                ((100 - percent*0.25) * (((rangevalue) * width) / 2)) / 100
               };
               stroke-linecap:${rounded ? "round" : "none"};
               '
@@ -1952,7 +1945,6 @@ quatercircle: function ({
             <radialGradient id="gradquater2${id}" cx="${gradient.orientation?gradient.orientation.x:0}%" cy="${gradient.orientation?gradient.orientation.y:0}%" r="${gradient.orientation?gradient.orientation.fill:100}%">
             ${stop}
             </radialGradient>
-
             <circle
             stroke="url(#gradquater2${id})"
             style='
@@ -1962,9 +1954,9 @@ quatercircle: function ({
             r:${width / 2 - strokewidth};
             fill:transparent;
             stroke-dashoffset:0;
-            stroke-dasharray: ${(percent * (((rangevalue*0.75) * width) / 2)) / 100} ${
-                    ((100 - percent) * (((rangevalue*1.25) * width) / 2)) / 100
-                  };
+            stroke-dasharray: ${(percent*(percent>99?1:0.75+(strokewidth*0.5/width)) * (((rangevalue) * width) / 2)) / 100} ${
+              ((100 - percent*0.25) * (((rangevalue) * width) / 2)) / 100
+            };
             stroke-linecap:${rounded ? "round" : "none"};
             '
             ></circle>
@@ -1981,7 +1973,7 @@ quatercircle: function ({
       moduleClick.style.cssText=`
       ${moduleClick.style.cssText};height:${(width)-1}px;overflow-y:hidden;
       overflow-x:hidden;
-      clip-path: polygon(0 0, 100% 0, 100% 82%, 68% 61%, 29% 68%, 0 82%);                                                        
+     clip-path: polygon(0 0, 100% 0, 100% 82%, 68% 61%, 29% 68%, 0 82%);                                                        
       `
   }
  
