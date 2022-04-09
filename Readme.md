@@ -1,7 +1,7 @@
 # range.js
 ===========
 
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.6.6&x2=0)]()
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.7.0&x2=0)]()
 
 
 It is a light weight library, which provides well customizable svg progress-range. The library does **not require any rendering from the server**, as the whole svg is created on the **client's browser**. However, as it is heavily dependent on the browser.
@@ -145,8 +145,8 @@ let people=new range.circle({
 
     //POINT
       pointcount:                  5,          // The number of point that should be displayed  (--number)
-      activecolor:                  "navy",     // The set the background of the active point  (--number)
-      fillpoint:                   3,          // To set number of active point (--string)
+      activecolor:                  "navy",     // The set the background of the active point  (--string)
+      fillpoint:                   3,          // To set number of active point (--number)
       pointwidth:                   35,         // Set the width of the points (--number)
       disabledcolor:                "rgba(230,230,230,0.07",         // Set the color and background of non-active point (--strings)
       titles:      ["Account","BVN","Contact","Verified","Active"]   // The title given to each point and is displayed ontop of the point 
@@ -156,9 +156,10 @@ let people=new range.circle({
    // PIECHART
        piecolor:               ["white","red","green","teal"],      // To set the colors of the pie strokes (--object)
        pierange:               [40,20,20,10],      // To set the percentage of the pie strokes (--object)
-       strokepattern:           [40,18,26,35],      // To set the width of the pie strokes  (if not set the the stroke width is set to the stroke width) (--object)
-       strokewidth:                        40,      // To set the max-width of the pie strokes (--object)
-       stroketitle:             ["Money arrival","Depature","Gross outcome display","Intrest"],  // The stroke title (not more than 13 characters)  (--number)
+       strokepattern:           [40,18,26,35],     // To set the width of the pie strokes  (if not set the the stroke width is set to the stroke width) (--object)
+       strokewidth:                        40,      // To set pie stroketitle display (true/false)
+       pielabel:                        true,      // To set the max-width of the pie strokes (--object)
+       stroketitle:             ["Money arrival","Depature","Gross outcome display","Intrest"],  // The stroke title (not more than 13 characters)  (--object)
        strokepatternbackground:      "white",  // The stroke background color if the stroke pattern is set (--string)
 
     // LINECHART

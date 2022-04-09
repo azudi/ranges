@@ -1367,6 +1367,7 @@
       strokepattern,
       strokepatternbackground,
       stroketitle,
+      pielabel
     }){
   
         let moduleClickPie=document.getElementById(id)
@@ -1480,7 +1481,7 @@
               width:150px;z-index:${pierange.length+2};transform:scale(0);transform-origin:0 0;
               border-radius:5px;display:block;transition:0.2s
            `
-          
+    if(pielabel && pielabel==true){  
       for(let i=0;i<pierange.length;i++){
          let contain=document.createElement("span");
            contain.style.cssText=`
@@ -1501,7 +1502,8 @@
       }
   
    moduleClickPie.appendChild(textdiv)
-    
+        }
+        //end of code for pielabel
           
         moduleClickPie.onmouseenter=function(e){
           textdiv.style.transform="scale(1)";
@@ -1514,6 +1516,9 @@
      }
      else if(x_cursor<right_dist){
       textdiv.style.cssText=`${textdiv.style.cssText};left:-120px;top:${strokewidth/2}px`
+     }
+     if(screen.width<426){
+      textdiv.style.cssText=`${textdiv.style.cssText};left:30px;top:${width-(strokewidth/3)}px;`
      }
     
         }

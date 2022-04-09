@@ -1,6 +1,6 @@
 {
   "name": "prog-range",
-  "version": "1.6.6",
+  "version": "1.7.0",
   "description": "light weight progress bars",
   "main": "range/module/range.js",
   "scripts": {
