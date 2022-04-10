@@ -1410,11 +1410,11 @@
         }
         else if(strokewidth>=(width*.35) && strokewidth<(width*.36)){
           ratio=0.64-((strokewidth-3)/width)
-          console.log("you have exceeeded to the negative value and not accepted. iNPUT A VALUE LESS THAN O.35% OF THE WIDTH")
+          console.warn("you have exceeeded to the negative value and not accepted. iNPUT A VALUE LESS THAN O.35% OF THE WIDTH")
         }
         else if(strokewidth>=(width*.36)){
           ratio=0
-          console.log("you have exceeeded to the negative value and not accepted. iNPUT A VALUE LESS THAN O.35% OF THE WIDTH")
+          console.warn("you have exceeeded to the negative value and not accepted. iNPUT A VALUE LESS THAN O.35% OF THE WIDTH")
         }
         let patternwidth
           if(strokepattern){
@@ -1426,14 +1426,15 @@
            
   
         percent=percent+pierange[p];
-      let svgPie = document.createElement("span");    
+      let svgPie = document.createElement("span"); 
+      svgPie.classList.add("stroke_svg_color")   
       svgPie.style.cssText = `width:${width}px;
       height:${width}px;z-index:${pierange.length-p};
       position:absolute;top:0;left:0;`;
        
   
             svgPie.innerHTML = `
-            <svg range=${pierange[p]} title=${stroketitle[p]} width=${width}px height=${width}px style="z-index:1">
+            <svg  title=${stroketitle[p]} width=${width}px height=${width}px style="z-index:1">
              
             <circle  cy=${width / 2} cx=${width / 2} 
               r=${width / 2 - strokewidth} 
@@ -1474,6 +1475,7 @@
       moduleClickPie.appendChild(svgPie);
   
       }
+     
       let textdiv=document.createElement("span")
         textdiv.classList.add("piechart_details")
            textdiv.style.cssText=`
@@ -1506,6 +1508,7 @@
         //end of code for pielabel
           
         moduleClickPie.onmouseenter=function(e){
+      
           textdiv.style.transform="scale(1)";
            let x_cursor=e.clientX
         let right_dist=e.target.parentElement.getBoundingClientRect().right-e.target.parentElement.clientWidth/2
@@ -1520,7 +1523,7 @@
      if(screen.width<426){
       textdiv.style.cssText=`${textdiv.style.cssText};left:30px;top:${width-(strokewidth/3)}px;`
      }
-    
+     
         }
       moduleClickPie.onmouseleave=function(){
         setTimeout(()=>{
@@ -1532,7 +1535,7 @@
    moduleClickPie.style.cssText=`width:${width}px;height:${width}px;position:relative !important`
   
     }
-   
+  
   },
   //end of code for piechart
   
