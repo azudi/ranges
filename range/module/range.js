@@ -1368,7 +1368,8 @@
       strokepatternbackground,
       stroketitle,
       pielabel
-    }){
+      })
+      {
   
         let moduleClickPie=document.getElementById(id)
            if(moduleClickPie){ 
@@ -1393,8 +1394,14 @@
       
     
          let percent=0;
+  
+         var sum = pierange.reduce(function(a, b){
+              return a + b;
+          }, 0);
+          
+           pierange = pierange.map( value => ((value/sum)*100))
        
-      for(let p=0;p<(pierange.length);p++){
+    for(let p=0;p<(pierange.length);p++){
      let ratio=1-(strokewidth/width)
         if(strokewidth>=(width*.1) && strokewidth<(width*.2)){
           ratio=0.9-(strokewidth/width)
